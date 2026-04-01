@@ -855,7 +855,7 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
     <div class="sec-num reveal">07 · Contact</div>
     <h2 class="reveal">Have data?<br>Let's find <em>the story</em></h2>
      <p class="contact-sub reveal">I'm looking for a role where I can keep finding the narratives hiding in complex data and turning them into revenuemoving decisions. If that sounds like what your team needs, let's talk.</p>
-    <a href="mailto:vrindaparashar2003@gmail.com">vrindaparashar2003@gmail.com</a>
+    <a href="mailto:vrindaparashar2003@gmail.com" class="c-email reveal">vrindaparashar2003@gmail.com</a>
     <div class="c-row reveal">
       <a href="tel:+919875395143" class="c-link">📞 +91 98753 95143</a>
       <a href="https://linkedin.com/in/vrinda-parashar2024" target="_blank" class="c-link">🔗 LinkedIn Profile</a>
@@ -899,19 +899,6 @@ function frame(){
   requestAnimationFrame(frame);
 }
 frame();
-
-/* CURSOR */
-const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
-let mx=0,my=0,rx=0,ry=0;
-if(dot&&ring){
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx-4+'px';dot.style.top=my-4+'px'});
-  (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx-20+'px';ring.style.top=ry-20+'px';requestAnimationFrame(loop)})();
-  document.querySelectorAll('a,button,.proj-card,.exp-card,.rec-card').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{dot.style.transform='translate(-50%,-50%) scale(3)';ring.style.width='60px';ring.style.height='60px';ring.style.borderColor='rgba(232,93,117,.75)'});
-    el.addEventListener('mouseleave',()=>{dot.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='40px';ring.style.height='40px';ring.style.borderColor='rgba(232,93,117,.45)'});
-  });
-}
-
 /* SCROLL REVEAL */
 document.querySelectorAll('.reveal').forEach(el=>el.classList.add('will-animate'));
 const obs=new IntersectionObserver(es=>es.forEach(e=>{

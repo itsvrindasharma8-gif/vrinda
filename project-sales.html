@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Data & Web Analyst portfolio project by Vrinda Parashar — GA4, Power BI, SQL, E-commerce Analytics.">
+<meta property="og:title" content="Sales Forecasting · Vrinda Parashar">
+<meta property="og:description" content="Data & Web Analyst with expertise in GA4, Power BI, SQL and e-commerce analytics.">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/16xCZOrS4s_--KKxD6gpZmqC1C2yVEWpE">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<title>Sales Forecasting · Vrinda Parashar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#00b4a6;--accent-rgb:0,180,166}
+/* SHARED BASE CSS  all project pages */
+:root{--ink:#08070f;--paper:#f2ede6;--rose:#e85d75;--teal:#00b4a6;--amber:#f7a325;--violet:#7c5cbf}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:'Syne',sans-serif;overflow-x:hidden}
+#bgCanvas{position:fixed;inset:0;z-index:0;opacity:.35;pointer-events:none}
+@media(pointer:fine){
+  .cur{position:fixed;pointer-events:none;z-index:9999}
+}
+#curDot{width:8px;height:8px;border-radius:50%;transform:translate(-50%,-50%);transition:transform .15s}
+#curRing{width:40px;height:40px;border-radius:50%;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s;border:1.5px solid transparent}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 5rem;background:rgba(8,7,15,.75);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav-mark{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;font-weight:600;color:#fff;letter-spacing:.04em;text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
+.nav-links a{font-family:'Space Mono',monospace;font-size:.62rem;color:rgba(255,255,255,.5);text-decoration:none;letter-spacing:.18em;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--accent)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:none;border:none}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:#fff;transition:transform .3s,opacity .3s}
+.nav-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-drawer{display:none;position:fixed;inset:0;background:rgba(8,7,15,.97);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;backdrop-filter:blur(20px)}
+.nav-drawer.open{display:flex}
+.nav-drawer a{font-family:'Space Mono',monospace;font-size:.95rem;color:rgba(255,255,255,.6);text-decoration:none;letter-spacing:.2em;text-transform:uppercase;transition:color .3s}
+.nav-drawer a:hover{color:var(--accent)}
+/* HERO */
+.proj-hero{min-height:55vh;display:flex;align-items:flex-end;padding:9rem 5rem 5rem;position:relative;overflow:hidden}
+.proj-hero-content{position:relative;z-index:2;max-width:820px}
+.proj-eyebrow{display:flex;align-items:center;gap:1rem;font-family:'Space Mono',monospace;font-size:.62rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;animation:fadeUp .8s .2s both}
+.proj-eyebrow-line{width:2rem;height:1px;background:var(--accent)}
+.proj-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:700;line-height:1;color:#fff;margin-bottom:1.5rem;animation:fadeUp .9s .35s both}
+.proj-title em{font-style:italic;color:var(--accent)}
+.proj-tags{display:flex;gap:.5rem;flex-wrap:wrap;animation:fadeUp .8s .5s both}
+.ptag{font-family:'Space Mono',monospace;font-size:.56rem;padding:.3rem .7rem;letter-spacing:.05em}
+/* BODY */
+.proj-body{max-width:1100px;margin:0 auto;padding:6rem 5rem;position:relative;z-index:1}
+.proj-section{margin-bottom:5rem}
+.proj-section-label{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem}
+.proj-section-label::before{content:'';width:1.5rem;height:1px;background:var(--accent)}
+.proj-section h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:#fff;margin-bottom:1.5rem;line-height:1.15}
+.proj-section p{font-family:'Cormorant Garamond',serif;font-size:1.12rem;line-height:1.9;color:rgba(242,237,230,.68);margin-bottom:1.2rem}
+.proj-section p strong{color:#fff;font-weight:600}
+/* METRICS */
+.metrics-row{display:grid;gap:1px;background:rgba(255,255,255,.06);margin:3rem 0;animation:fadeUp .8s .4s both}
+.metric-block{background:var(--ink);padding:2rem;text-align:center}
+.metric-big{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:700;color:var(--accent);display:block;line-height:1}
+.metric-desc{font-family:'Space Mono',monospace;font-size:.58rem;color:rgba(242,237,230,.35);letter-spacing:.1em;text-transform:uppercase;margin-top:.5rem;display:block}
+/* INSIGHT CARDS */
+.insight-grid{display:grid;gap:1px;background:rgba(255,255,255,.05);margin:2rem 0}
+.insight-card{background:var(--ink);padding:2rem;border-top:2px solid}
+.insight-card.c1{border-color:var(--rose)} .insight-card.c2{border-color:var(--teal)}
+.insight-card.c3{border-color:var(--amber)} .insight-card.c4{border-color:var(--violet)}
+.insight-card h4{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;color:#fff;margin-bottom:.7rem;letter-spacing:.04em}
+.insight-card p{font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(242,237,230,.58);line-height:1.75}
+/* OUTCOME */
+.outcome-block{padding:3rem;margin:2rem 0;position:relative;overflow:hidden}
+.outcome-block::before{content:'OUTCOME';position:absolute;top:1.5rem;right:1.5rem;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.2em;opacity:.4}
+.outcome-block h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:#fff;margin-bottom:.8rem}
+.outcome-block p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.85;color:rgba(242,237,230,.65)}
+/* PROJECT NAV */
+.proj-nav{display:flex;justify-content:space-between;align-items:center;padding:3rem 0;border-top:1px solid rgba(255,255,255,.06);margin-top:4rem;flex-wrap:wrap;gap:1.5rem}
+.proj-nav a{font-family:'Space Mono',monospace;font-size:.65rem;color:rgba(242,237,230,.4);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .3s;display:flex;align-items:center;gap:.5rem}
+.proj-nav a:hover{color:var(--accent)}
+.proj-nav .next-proj h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#fff;margin-top:.4rem;text-align:right}
+/* FOOTER */
+footer{background:var(--ink);padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-family:'Space Mono',monospace;font-size:.6rem;color:rgba(242,237,230,.22);letter-spacing:.1em}
+/* REVEAL */
+.reveal{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.will-animate{opacity:0;transform:translateY(28px)}
+.reveal.in{opacity:1!important;transform:none!important}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:1.2rem 1.5rem}
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .proj-hero{padding:7rem 1.5rem 3.5rem}
+  .proj-body{padding:4rem 1.5rem}
+  .metrics-row{grid-template-columns:1fr 1fr!important}
+  .insight-grid{grid-template-columns:1fr!important}
+  .proj-nav{flex-direction:column;gap:1.5rem}
+  footer{padding:1.5rem;flex-direction:column;gap:.5rem;text-align:center}
+}
+@media(max-width:600px){
+  .proj-hero{padding:6rem 1rem 2.5rem}
+  .proj-body{padding:3rem 1rem}
+  .metrics-row{grid-template-columns:1fr!important}
+}
+
+
+.proj-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(0,180,166,.12) 0%,transparent 65%)}
+.ptag{background:rgba(0,180,166,.08);border:1px solid rgba(0,180,166,.2);color:rgba(0,180,166,.8)}
+.metrics-row{grid-template-columns:repeat(4,1fr)}
+.insight-grid{grid-template-columns:repeat(3,1fr)}
+.outcome-block{background:linear-gradient(135deg,rgba(0,180,166,.08),rgba(124,92,191,.06));border:1px solid rgba(0,180,166,.15)}
+.outcome-block::before{color:var(--teal)}
+/* BA section */
+.ba-section{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);padding:2.5rem;margin:2rem 0}
+.ba-title{font-family:'Space Mono',monospace;font-size:.6rem;color:rgba(242,237,230,.3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.5rem}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.ba-col-lbl{font-family:'Space Mono',monospace;font-size:.58rem;color:rgba(242,237,230,.35);letter-spacing:.08em;text-transform:uppercase;text-align:center;margin-bottom:1rem}
+.ba-col-lbl.after{color:var(--teal)}
+.ba-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem}
+.ba-name{font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(242,237,230,.4);width:56px;flex-shrink:0;text-align:right}
+.ba-track{flex:1;background:rgba(255,255,255,.04);border-radius:2px;height:18px;overflow:hidden}
+.ba-fill{height:100%;border-radius:2px;width:0;transition:width 1.6s cubic-bezier(.4,0,.2,1)}
+.ba-val{font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(242,237,230,.5);width:36px;flex-shrink:0}
+@media(max-width:960px){.ba-grid{grid-template-columns:1fr}.insight-grid{grid-template-columns:1fr!important}}
+
+</style>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<div class="cur" id="curDot" style="position:fixed;top:0;left:0;background:var(--accent)"></div>
+<div class="cur" id="curRing" style="position:fixed;top:0;left:0;border:1.5px solid rgba(var(--accent-rgb),.45)"></div>
+<nav>
+  <a href="index.html" class="nav-mark">Vrinda Parashar</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="Vrinda-Parashar_DA.pdf" download style="font-family:'Space Mono',monospace;font-size:.55rem;color:var(--accent);text-decoration:none;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(var(--accent-rgb),.4);padding:.42rem 1rem;transition:all .3s;white-space:nowrap">📄 Resume</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="index.html#about">About</a>
+  <a href="index.html#experience">Experience</a>
+  <a href="index.html#skills">Skills</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="Vrinda-Parashar_DA.pdf" download style="color:var(--accent)">📄 Download Resume</a>
+</div>
+
+<div class="proj-hero">
+  <div class="proj-hero-bg"></div>
+  <div class="proj-hero-content">
+    <div class="proj-eyebrow"><span class="proj-eyebrow-line"></span>Project 02 · Power BI / Forecasting</div>
+    <h1 class="proj-title">Sales Forecasting &amp;<br><em>Prepaid</em> Optimisation</h1>
+    <div class="proj-tags">
+      <span class="ptag">Power BI</span><span class="ptag">Sales Forecasting</span><span class="ptag">RTO Analysis</span><span class="ptag">Regional Segmentation</span><span class="ptag">SQL</span>
+    </div>
+  </div>
+</div>
+<div class="proj-body">
+  <div class="metrics-row reveal">
+    <div class="metric-block"><span class="metric-big">1M+</span><span class="metric-desc">Transactions Modelled</span></div>
+    <div class="metric-block"><span class="metric-big">+40%</span><span class="metric-desc">Prepaid Adoption</span></div>
+    <div class="metric-block"><span class="metric-big" style="color:var(--amber)">-15%</span><span class="metric-desc">RTO Rate Reduction</span></div>
+    <div class="metric-block"><span class="metric-big" style="color:var(--rose)">+17%</span><span class="metric-desc">Inventory Accuracy</span></div>
+  </div>
+  <div class="proj-section reveal">
+    <div class="proj-section-label">Overview</div>
+    <h2>Turning 2 years of data into a forward-looking strategy</h2>
+    <p>RedTape's operations teams were making inventory and logistics decisions based on intuition and lagging reports. The goal was to build a <strong>2-year historical sales dashboard</strong> capable of exposing seasonal trends, regional patterns, and payment behaviour  and use that intelligence to drive concrete operational improvements.</p>
+    <p>The project spanned over <strong>1 million transaction records</strong>, covering multiple SKUs, geographies, and payment modes across a 24-month window.</p>
+  </div>
+  <div class="proj-section reveal">
+    <div class="proj-section-label">Before vs After</div>
+    <h2>Measuring the impact</h2>
+    <div class="ba-section" id="baSection">
+      <div class="ba-title">Prepaid adoption · RTO rate · Inventory accuracy</div>
+      <div class="ba-grid">
+        <div>
+          <div class="ba-col-lbl">Before</div>
+          <div class="ba-row"><div class="ba-name">Prepaid</div><div class="ba-track"><div class="ba-fill" style="background:rgba(0,180,166,.35)" data-w="45"></div></div><div class="ba-val">45%</div></div>
+          <div class="ba-row"><div class="ba-name">RTO</div><div class="ba-track"><div class="ba-fill" style="background:rgba(247,163,37,.35)" data-w="70"></div></div><div class="ba-val">24%</div></div>
+          <div class="ba-row"><div class="ba-name">Inv.Acc.</div><div class="ba-track"><div class="ba-fill" style="background:rgba(232,93,117,.25)" data-w="55"></div></div><div class="ba-val">±22%</div></div>
+        </div>
+        <div>
+          <div class="ba-col-lbl after">After</div>
+          <div class="ba-row"><div class="ba-name">Prepaid</div><div class="ba-track"><div class="ba-fill" style="background:rgba(0,180,166,.85)" data-w="85"></div></div><div class="ba-val" style="color:var(--teal)">85%</div></div>
+          <div class="ba-row"><div class="ba-name">RTO</div><div class="ba-track"><div class="ba-fill" style="background:rgba(247,163,37,.75)" data-w="55"></div></div><div class="ba-val" style="color:var(--amber)">-15%</div></div>
+          <div class="ba-row"><div class="ba-name">Inv.Acc.</div><div class="ba-track"><div class="ba-fill" style="background:rgba(0,180,166,.85)" data-w="72"></div></div><div class="ba-val" style="color:var(--teal)">±5%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="proj-section reveal">
+    <div class="proj-section-label">Key Findings</div>
+    <h2>What the 2-year view revealed</h2>
+    <div class="insight-grid">
+      <div class="insight-card c1"><h4>Seasonal Demand Peaks</h4><p>October and February consistently showed 2.4x average order volume  driven by festive season and end-of-winter sale cycles, enabling more accurate pre-stocking.</p></div>
+      <div class="insight-card c2"><h4>Regional RTO Patterns</h4><p>Tier-3 cities contributed 62% of total RTO volume. COD prevalence in these regions was the primary driver  targeted prepaid incentives were modelled per zone.</p></div>
+      <div class="insight-card c3"><h4>Payment Mode Impact</h4><p>Prepaid orders returned at 3.2% vs 22% for COD. The revenue leakage from COD-related returns was quantified and communicated to pricing strategy teams.</p></div>
+    </div>
+  </div>
+  <div class="proj-section reveal">
+    <div class="proj-section-label">Dashboard Design</div>
+    <h2>How the Power BI solution was structured</h2>
+    <p>The dashboard was structured across four interconnected report pages: <strong>Sales Overview</strong> (volume, revenue, trend), <strong>Payment Mode Analysis</strong> (prepaid vs COD by region and category), <strong>RTO Deep Dive</strong> (return rates by pincode, product, and time), and <strong>Forecasting View</strong> (30/60/90-day projections using trend decomposition).</p>
+    <p>Drill-through navigation allowed warehouse and marketing leads to move from company-level aggregates to individual SKU performance without leaving the report. Scheduled refresh ensured live-accurate data across stakeholders.</p>
+  </div>
+  <div class="outcome-block reveal">
+    <h3>Three KPIs moved simultaneously</h3>
+    <p>Prepaid adoption rose 40%, reducing the financial exposure from returns. RTO fell 15%, cutting reverse logistics costs. Inventory accuracy improved 17%, reducing both overstock and stockout incidents. These were driven by data-backed changes to logistics routing, prepaid discount targeting, and demand forecasting cycles.</p>
+  </div>
+  <div class="proj-nav">
+    <a href="project-funnel.html">← Previous: Funnel Analysis</a>
+    <div class="next-proj">
+      <a href="project-inventory.html" style="flex-direction:column;align-items:flex-end">
+        <span>Next Project →</span>
+        <h4>Inventory Monitoring Dashboard</h4>
+      </a>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>© 2026 Vrinda Parashar · Built with care</p>
+  <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;justify-content:flex-end">
+    <a href="https://linkedin.com/in/vrinda-parashar2024" target="_blank" style="font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(242,237,230,.35);text-decoration:none;letter-spacing:.1em" onmouseover="this.style.color='#e85d75'" onmouseout="this.style.color='rgba(242,237,230,.35)'">LinkedIn ↗</a>
+    <a href="Vrinda-Parashar_DA.pdf" download style="font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(242,237,230,.35);text-decoration:none;letter-spacing:.1em" onmouseover="this.style.color='#f7a325'" onmouseout="this.style.color='rgba(242,237,230,.35)'">📄 Resume</a>
+    <a href="index.html#projects" style="font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(242,237,230,.35);text-decoration:none;letter-spacing:.1em" onmouseover="this.style.color='#00b4a6'" onmouseout="this.style.color='rgba(242,237,230,.35)'">← All Projects</a>
+  </div>
+</footer>
+<script>
+
+const COLS=['#00b4a6','#7c5cbf','#f7a325','#e85d75'];
+const cvs=document.getElementById('bgCanvas'),ctx=cvs.getContext('2d');
+let W,H,pts=[];
+function resize(){W=cvs.width=window.innerWidth;H=cvs.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+class P{
+  constructor(){this.reset()}
+  reset(){this.x=Math.random()*W;this.y=Math.random()*H;this.vx=(Math.random()-.5)*.35;this.vy=(Math.random()-.5)*.35;this.r=Math.random()*1.6+.4;this.col=COLS[Math.floor(Math.random()*4)];this.a=Math.random()*.5+.15}
+  update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W||this.y<0||this.y>H)this.reset()}
+  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.col+Math.floor(this.a*255).toString(16).padStart(2,'0');ctx.fill()}
+}
+for(let i=0;i<80;i++)pts.push(new P());
+function frame(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.update();p.draw()});requestAnimationFrame(frame)}
+frame();
+const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
+let mx=0,my=0,rx=0,ry=0;
+if(dot&&ring){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx-4+'px';dot.style.top=my-4+'px'});
+  (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx-20+'px';ring.style.top=ry-20+'px';requestAnimationFrame(loop)})();
+}
+document.querySelectorAll('.reveal').forEach(el=>el.classList.add('will-animate'));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal.will-animate').forEach(el=>obs.observe(el));
+const toggle=document.getElementById('navToggle'),drawer=document.getElementById('navDrawer');
+if(toggle&&drawer){
+  toggle.addEventListener('click',()=>{toggle.classList.toggle('open');drawer.classList.toggle('open');document.body.style.overflow=drawer.classList.contains('open')?'hidden':''});
+  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{toggle.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow=''}));
+}
+
+const baObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.ba-fill').forEach(b=>{b.style.width=(b.dataset.w||0)+'%'});baObs.unobserve(e.target)}})},{threshold:.2});
+document.querySelectorAll('#baSection').forEach(el=>baObs.observe(el));
+
+
+</script>
+</body>
+</html>

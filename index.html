@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vrinda Parashar · Data & Web Analyst</title>
+<meta name="description" content="Data & Web Analyst with expertise in GA4, Power BI, SQL and e-commerce analytics. Driving measurable growth across 2M+ monthly sessions at RedTape Limited.">
+<meta property="og:title" content="Vrinda Parashar · Data & Web Analyst">
+<meta property="og:description" content="Turning data into decisions. GA4 · Power BI · SQL · E-commerce Analytics · 2M+ sessions/mo.">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/16xCZOrS4s_--KKxD6gpZmqC1C2yVEWpE">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vrinda Parashar · Data & Web Analyst">
+<meta name="twitter:description" content="Turning data into decisions. GA4 · Power BI · SQL · E-commerce Analytics.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#08070f;--paper:#f2ede6;--rose:#e85d75;--teal:#00b4a6;--amber:#f7a325;--violet:#7c5cbf;--text-dark:#1a1828;--text-mid:#5a5572;--text-light:#9893a8}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:'Syne',sans-serif;overflow-x:hidden}
+#bgCanvas{position:fixed;inset:0;z-index:0;opacity:.45;pointer-events:none}
+@media(pointer:fine){
+  .cur{position:fixed;pointer-events:none;z-index:9999}
+  #curDot{width:8px;height:8px;background:var(--rose);border-radius:50%;transform:translate(-50%,-50%);transition:transform .15s}
+  #curRing{width:40px;height:40px;border:1.5px solid rgba(232,93,117,.45);border-radius:50%;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
+}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1rem 5rem;background:rgba(8,7,15,.6);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav-mark{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo-img{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:center top;border:1.5px solid rgba(232,93,117,.45);transition:border-color .3s,box-shadow .3s}
+.nav-mark:hover .nav-logo-img{border-color:var(--rose);box-shadow:0 0 12px rgba(232,93,117,.3)}
+.nav-logo-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;font-weight:700;color:#fff;letter-spacing:.04em}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-family:'Space Mono',monospace;font-size:.58rem;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.16em;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--rose)}
+.nav-resume{font-family:'Space Mono',monospace;font-size:.55rem;color:var(--rose);text-decoration:none;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(232,93,117,.4);padding:.42rem 1rem;transition:all .3s;white-space:nowrap}
+.nav-resume:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
+.avail-dot{display:inline-block;width:7px;height:7px;background:#22c55e;border-radius:50%;margin-right:.4rem;box-shadow:0 0 6px rgba(34,197,94,.6);animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 6px rgba(34,197,94,.6)}50%{box-shadow:0 0 12px rgba(34,197,94,.9)}}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:none;border:none}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:#fff;transition:transform .3s,opacity .3s}
+.nav-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-drawer{display:none;position:fixed;inset:0;background:rgba(8,7,15,.97);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;backdrop-filter:blur(20px)}
+.nav-drawer.open{display:flex}
+.nav-drawer a{font-family:'Space Mono',monospace;font-size:.95rem;color:rgba(255,255,255,.6);text-decoration:none;letter-spacing:.2em;text-transform:uppercase;transition:color .3s}
+.nav-drawer a:hover{color:var(--rose)}
+
+/* ─── HERO ─── */
+.hero{min-height:100vh;display:grid;grid-template-rows:1fr auto;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 80% 30%,rgba(232,93,117,.18) 0%,transparent 65%),radial-gradient(ellipse 50% 60% at 10% 80%,rgba(0,180,166,.13) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 60% 70%,rgba(124,92,191,.1) 0%,transparent 55%)}
+.hero-content{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;padding:10rem 5rem 4rem;position:relative;z-index:2;gap:4rem}
+.hero-eyebrow{display:flex;align-items:center;gap:1rem;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--rose);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.8rem;animation:fadeUp .8s .2s both}
+.eyebrow-line{width:2.5rem;height:1px;background:var(--rose)}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,9vw,8.5rem);line-height:.92;font-weight:700;color:#fff;margin-bottom:1rem;animation:fadeUp .9s .35s both}
+.hero-name .line2{font-style:italic;-webkit-text-stroke:1.5px rgba(255,255,255,.55);color:transparent;padding-left:2rem;display:block}
+.hero-band{display:inline-flex;align-items:center;background:var(--rose);padding:.5rem 2.2rem .5rem 1.2rem;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;margin-bottom:2rem;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%);animation:fadeUp .8s .5s both}
+.hero-desc{font-size:1rem;line-height:1.85;color:rgba(242,237,230,.68);max-width:460px;margin-bottom:3rem;animation:fadeUp .8s .65s both}
+.hero-desc strong{color:#fff}
+.hero-ctas{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;animation:fadeUp .8s .8s both}
+.btn-glow{position:relative;background:linear-gradient(135deg,var(--rose),#c4435a);color:#fff;padding:.9rem 2.2rem;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:transform .3s,box-shadow .3s;display:inline-block}
+.btn-glow:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(232,93,117,.4)}
+.btn-ghost{color:rgba(242,237,230,.65);padding:.9rem 2rem;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(242,237,230,.2);transition:all .3s;display:inline-block}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+.btn-resume{position:relative;background:transparent;color:rgba(242,237,230,.7);padding:.9rem 2rem;font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(242,237,230,.18);transition:all .3s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-resume:hover{border-color:var(--amber);color:var(--amber)}
+.btn-resume svg{transition:transform .3s}
+.btn-resume:hover svg{transform:translateY(2px)}
+
+/* ─── HERO RIGHT / VENN ─── */
+.hero-right{position:relative;animation:fadeUp 1s .5s both}
+.hero-right-inner{display:flex;flex-direction:column;gap:1.5rem;align-items:center}
+.intersection-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);padding:1.8rem 2rem 1.4rem;position:relative;max-width:380px;width:100%}
+.intersection-box::before{content:'WHERE I EXIST';position:absolute;top:-10px;left:1.5rem;background:var(--ink);padding:0 .6rem;font-family:'Space Mono',monospace;font-size:.5rem;color:var(--rose);letter-spacing:.18em}
+.venn-wrap{position:relative;width:100%;height:150px;margin-bottom:.8rem}
+.venn-wrap svg{width:100%;height:100%;overflow:visible}
+
+/* Circle pulse animations */
+.venn-circle-left{animation:vennLeft 4s ease-in-out infinite;transform-origin:130px 75px}
+.venn-circle-right{animation:vennRight 4s ease-in-out infinite;transform-origin:210px 75px}
+.venn-intersection{animation:vennGlow 4s ease-in-out infinite}
+@keyframes vennLeft{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:.85;transform:scale(1.04)}}
+@keyframes vennRight{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.78;transform:scale(1.04)}}
+@keyframes vennGlow{0%,100%{opacity:.3}50%{opacity:.75}}
+
+/* Orbit dots */
+.orbit-wrap-l{transform-origin:130px 75px;animation:orbitL 6s linear infinite}
+.orbit-wrap-r{transform-origin:210px 75px;animation:orbitR 9s linear infinite}
+@keyframes orbitL{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes orbitR{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+
+/* Dashed ring */
+.venn-dash-ring{animation:dashSpin 3s linear infinite}
+@keyframes dashSpin{to{stroke-dashoffset:-24}}
+
+.venn-label-l{font-family:'Space Mono',monospace;font-size:.52rem;fill:rgba(232,93,117,.9);text-anchor:middle}
+.venn-label-r{font-family:'Space Mono',monospace;font-size:.52rem;fill:rgba(0,180,166,.9);text-anchor:middle}
+.venn-label-c{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;fill:#fff;text-anchor:middle}
+.venn-sub-c{font-family:'Space Mono',monospace;font-size:6.5px;fill:rgba(232,93,117,.85);text-anchor:middle;letter-spacing:1px}
+.intersection-labels{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.5rem;color:rgba(242,237,230,.28);letter-spacing:.05em;padding:0 .2rem}
+
+.hero-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);max-width:380px;width:100%}
+.hstat{background:var(--ink);padding:.9rem .8rem;text-align:center}
+.hstat-val{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;display:block;line-height:1}
+.hstat-lbl{font-family:'Space Mono',monospace;font-size:.46rem;color:rgba(242,237,230,.35);letter-spacing:.07em;text-transform:uppercase;margin-top:.3rem;display:block}
+.hstat:nth-child(1) .hstat-val{color:var(--rose)}
+.hstat:nth-child(2) .hstat-val{color:var(--teal)}
+.hstat:nth-child(3) .hstat-val{color:var(--amber)}
+
+/* ─── TICKER ─── */
+.hero-ticker{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.05);overflow:hidden;padding:1.2rem 0;background:rgba(255,255,255,.02)}
+.ticker-track{display:flex;animation:ticker 28s linear infinite;width:max-content}
+.ticker-item{display:flex;align-items:center;gap:2rem;padding:0 2rem;font-family:'Space Mono',monospace;font-size:.62rem;color:rgba(242,237,230,.3);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.ticker-item span{color:var(--rose)}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* ─── MARQUEE ─── */
+.marquee-divider{overflow:hidden;padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
+.marquee-track{display:flex;gap:3rem;animation:marquee 22s linear infinite;width:max-content;align-items:center}
+.mw{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.05);white-space:nowrap}
+.mw.a{-webkit-text-stroke:1px rgba(232,93,117,.3);color:transparent}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ─── SECTIONS ─── */
+.section{max-width:1200px;margin:0 auto;padding:7rem 5rem;position:relative;z-index:1}
+.sec-num{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--rose);letter-spacing:.2em;display:flex;align-items:center;gap:.8rem;margin-bottom:1rem}
+.sec-num::before{content:'';width:1.5rem;height:1px;background:var(--rose)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4.5rem);font-weight:700;line-height:1.05;color:#fff}
+.sec-title em{font-style:italic;color:var(--rose)}
+.sec-header{margin-bottom:3.5rem}
+
+/* ─── ABOUT ─── */
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;margin-top:2rem}
+.about-left{position:sticky;top:8rem}
+.about-portrait{width:100%;aspect-ratio:3/4;max-width:290px;border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
+.about-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(.92) contrast(1.05)}
+.portrait-tag{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;background:rgba(8,7,15,.85);backdrop-filter:blur(8px);padding:1rem;border-left:2px solid var(--rose)}
+.pt-title{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.04em}
+.pt-sub{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--rose);margin-top:.25rem}
+.edu-badge{margin-top:1.5rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);padding:1.4rem;display:flex;gap:1.2rem;align-items:center}
+.edu-icon{width:46px;height:46px;background:rgba(232,93,117,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.edu-deg{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#fff}
+.edu-school{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--text-light);letter-spacing:.06em;margin-top:.3rem}
+.about-text p{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:300;line-height:1.9;color:rgba(242,237,230,.72);margin-bottom:1.5rem}
+.about-text p strong{color:#fff;font-weight:600}
+
+/* ─── EXPERIENCE ─── */
+.exp-section{background:rgba(255,255,255,.012);margin:0;max-width:100%}
+.exp-inner{max-width:1200px;margin:0 auto;padding:7rem 5rem}
+.exp-cards{display:flex;flex-direction:column;gap:1px;margin-top:3.5rem}
+.exp-card{background:rgba(8,7,15,.85);border:1px solid rgba(255,255,255,.05);display:grid;grid-template-columns:270px 1fr;position:relative;overflow:hidden;transition:border-color .4s,background .4s;cursor:default}
+.exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--rose),var(--violet));transform:scaleY(0);transform-origin:top;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.exp-card:hover{border-color:rgba(232,93,117,.18);background:rgba(232,93,117,.025)}
+.exp-card:hover::before{transform:scaleY(1)}
+.exp-left{padding:2.5rem;border-right:1px solid rgba(255,255,255,.05)}
+.exp-company{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:#fff;margin-bottom:.35rem}
+.exp-period{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--rose);letter-spacing:.1em;margin-bottom:1.2rem}
+.badge{display:inline-block;font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;padding:.3rem .8rem;letter-spacing:.08em;text-transform:uppercase}
+.badge.cur{background:rgba(0,180,166,.1);border:1px solid rgba(0,180,166,.28);color:var(--teal)}
+.badge.promoted{background:rgba(232,93,117,.1);border:1px solid rgba(232,93,117,.28);color:var(--rose)}
+.badge.past{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:rgba(242,237,230,.45)}
+.exp-metrics{display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap}
+.metric{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);padding:.5rem .9rem}
+.metric-val{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--amber);display:block}
+.metric-lbl{font-family:'Space Mono',monospace;font-size:.52rem;color:rgba(242,237,230,.38);letter-spacing:.07em;text-transform:uppercase}
+.exp-right{padding:2.5rem}
+.exp-role{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#fff;margin-bottom:1.4rem}
+.exp-list{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.exp-list li{display:grid;grid-template-columns:8px 1fr;gap:.9rem;font-size:.875rem;line-height:1.72;color:rgba(242,237,230,.58)}
+.exp-list li::before{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--rose);margin-top:.68rem;flex-shrink:0}
+
+/* ─── SKILLS ─── */
+.skills-mosaic{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:rgba(255,255,255,.04);margin-top:3rem}
+.skill-tile{background:var(--ink);padding:2rem;transition:background .3s;position:relative;overflow:hidden}
+.skill-tile:hover{background:rgba(255,255,255,.025)}
+.skill-tile.w5{grid-column:span 5}.skill-tile.w4{grid-column:span 4}.skill-tile.w3{grid-column:span 3}.skill-tile.w6{grid-column:span 6}
+.skill-tile h4{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--rose);margin-bottom:.7rem}
+.skill-tile p{font-size:.83rem;color:rgba(242,237,230,.48);line-height:1.7}
+.skill-tile-icon{font-size:1.7rem;margin-bottom:.9rem;display:block}
+.skill-big{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:700;font-style:italic;color:rgba(255,255,255,.03);position:absolute;bottom:-1rem;right:.8rem;line-height:1;pointer-events:none}
+.pills{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.75rem}
+.pill{font-family:'Space Mono',monospace;font-size:.68rem;font-weight:700;padding:.35rem .8rem;border:1.5px solid rgba(255,255,255,.18);color:rgba(242,237,230,.8);letter-spacing:.04em;transition:all .2s;background:rgba(255,255,255,.04)}
+.pill:hover{border-color:var(--teal);color:var(--teal);background:rgba(0,180,166,.06)}
+
+/* ─── PROJECTS ─── */
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.04);margin-top:3rem}
+.proj-card{background:var(--ink);padding:2.8rem;position:relative;overflow:hidden;transition:background .3s;cursor:pointer;text-decoration:none;display:block;color:inherit}
+.proj-card:hover{background:rgba(255,255,255,.022)}
+.proj-accent{position:absolute;top:0;left:0;right:0;height:3px}
+.proj-card:nth-child(1) .proj-accent{background:linear-gradient(90deg,var(--rose),var(--violet))}
+.proj-card:nth-child(2) .proj-accent{background:linear-gradient(90deg,var(--teal),#00e6d4)}
+.proj-card:nth-child(3) .proj-accent{background:linear-gradient(90deg,var(--amber),var(--rose))}
+.proj-card:nth-child(4) .proj-accent{background:linear-gradient(90deg,var(--violet),var(--teal))}
+.proj-card:nth-child(5) .proj-accent{background:linear-gradient(90deg,var(--amber),var(--rose))}
+.proj-card:nth-child(6) .proj-accent{background:linear-gradient(90deg,var(--teal),var(--violet))}
+.proj-num{font-family:'Cormorant Garamond',serif;font-size:5.5rem;font-weight:700;color:rgba(255,255,255,.03);position:absolute;top:.2rem;right:1.2rem;line-height:1;pointer-events:none}
+.proj-icon{font-size:1.8rem;margin-bottom:1.2rem;display:block}
+.proj-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#fff;margin-bottom:.7rem;line-height:1.25}
+.proj-card p{font-size:.865rem;color:rgba(242,237,230,.52);line-height:1.8;margin-bottom:1.2rem}
+.proj-stack{display:flex;gap:.38rem;flex-wrap:wrap}
+.ptag{font-family:'Space Mono',monospace;font-size:.56rem;padding:.24rem .62rem;letter-spacing:.05em}
+.proj-card:nth-child(1) .ptag{background:rgba(232,93,117,.08);border:1px solid rgba(232,93,117,.2);color:rgba(232,93,117,.8)}
+.proj-card:nth-child(2) .ptag{background:rgba(0,180,166,.08);border:1px solid rgba(0,180,166,.2);color:rgba(0,180,166,.8)}
+.proj-card:nth-child(3) .ptag{background:rgba(247,163,37,.08);border:1px solid rgba(247,163,37,.2);color:rgba(247,163,37,.8)}
+.proj-card:nth-child(4) .ptag{background:rgba(124,92,191,.08);border:1px solid rgba(124,92,191,.2);color:rgba(124,92,191,.8)}
+.proj-card:nth-child(5) .ptag{background:rgba(247,163,37,.08);border:1px solid rgba(247,163,37,.2);color:rgba(247,163,37,.8)}
+.proj-card:nth-child(6) .ptag{background:rgba(0,180,166,.08);border:1px solid rgba(0,180,166,.2);color:rgba(0,180,166,.8)}
+.proj-result{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.05);font-family:'Space Mono',monospace;font-size:.6rem;color:rgba(242,237,230,.32);letter-spacing:.07em}
+.proj-result strong{color:var(--amber)}
+.proj-cta{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;background:rgba(232,93,117,.12);border:1.5px solid rgba(232,93,117,.35);padding:.65rem 1.2rem;transition:background .3s,border-color .3s}
+.proj-card:hover .proj-cta{background:var(--rose);border-color:var(--rose)}
+.proj-cta svg{transition:transform .3s}
+.proj-card:hover .proj-cta svg{transform:translateX(4px)}
+
+/* ─── CHARTS ─── */
+.charts-section{max-width:1200px;margin:0 auto;padding:0 5rem 7rem;position:relative;z-index:1}
+.charts-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.05);margin-top:3rem}
+.chart-panel{background:var(--ink);padding:2rem;position:relative;overflow:hidden}
+.chart-panel-label{font-family:'Space Mono',monospace;font-size:.56rem;color:rgba(242,237,230,.3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.4rem}
+.chart-panel-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:1.5rem;line-height:1.25}
+.mini-funnel{display:flex;flex-direction:column;gap:5px}
+.mf-row{display:flex;align-items:center;gap:8px}
+.mf-lbl{font-family:'Space Mono',monospace;font-size:.5rem;color:rgba(242,237,230,.35);width:68px;flex-shrink:0;text-align:right}
+.mf-track{flex:1;background:rgba(255,255,255,.04);border-radius:2px;height:16px;overflow:hidden}
+.mf-fill{height:100%;border-radius:2px;width:0;transition:width 1.5s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:5px}
+.mf-pct{font-family:'Space Mono',monospace;font-size:.48rem;color:rgba(255,255,255,.75)}
+.ba-group{margin-bottom:.8rem}
+.ba-label{font-family:'Space Mono',monospace;font-size:.52rem;color:rgba(242,237,230,.45);margin-bottom:.4rem;letter-spacing:.06em}
+.ba-pair{display:flex;flex-direction:column;gap:3px}
+.ba-row{display:flex;align-items:center;gap:8px}
+.ba-bar{height:12px;border-radius:2px;width:0;transition:width 1.5s cubic-bezier(.4,0,.2,1)}
+.ba-val{font-family:'Space Mono',monospace;font-size:.5rem;color:rgba(242,237,230,.45);flex-shrink:0}
+.ba-caption{font-family:'Space Mono',monospace;font-size:.46rem;color:rgba(242,237,230,.3);margin-top:1px;letter-spacing:.05em}
+.donut-wrap{display:flex;align-items:center;gap:1.2rem}
+.donut-legend{display:flex;flex-direction:column;gap:.42rem;flex:1}
+.dl-item{display:flex;align-items:center;gap:.45rem;font-family:'Space Mono',monospace;font-size:.52rem;color:rgba(242,237,230,.5)}
+.dl-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dl-val{margin-left:auto;color:rgba(242,237,230,.8)}
+.chart-result{margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.05);font-family:'Space Mono',monospace;font-size:.54rem;color:rgba(242,237,230,.3);letter-spacing:.06em}
+.chart-result strong{color:var(--amber)}
+
+/* ─── RECOMMENDATIONS ─── */
+.rec-section{background:rgba(255,255,255,.008);margin:0;max-width:100%}
+.rec-inner{max-width:1200px;margin:0 auto;padding:7rem 5rem}
+.rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);margin-top:3.5rem}
+.rec-card{
+  background:var(--ink);padding:2.8rem 2.5rem;position:relative;overflow:hidden;
+  border-top:2px solid transparent;
+  transition:background .4s;
+}
+.rec-card:hover{background:rgba(255,255,255,.018)}
+.rec-card.c1{border-top-color:var(--teal)}
+.rec-card.c2{border-top-color:var(--rose)}
+.rec-card.c3{border-top-color:var(--amber)}
+/* Big quotation mark watermark */
+.rec-card::before{
+  content:'\201C';
+  font-family:'Cormorant Garamond',serif;
+  font-size:9rem;font-weight:700;
+  color:rgba(255,255,255,.028);
+  position:absolute;top:-1.5rem;left:1rem;
+  line-height:1;pointer-events:none;
+  animation:none;
+}
+.rec-person{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;position:relative;z-index:1}
+.rec-init{
+  width:50px;height:50px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff;
+  letter-spacing:.02em;
+}
+.rec-card.c1 .rec-init{background:rgba(0,180,166,.15);border:1.5px solid rgba(0,180,166,.3)}
+.rec-card.c2 .rec-init{background:rgba(232,93,117,.15);border:1.5px solid rgba(232,93,117,.3)}
+.rec-card.c3 .rec-init{background:rgba(247,163,37,.12);border:1.5px solid rgba(247,163,37,.28)}
+.rec-info-name{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:#fff;letter-spacing:.02em}
+.rec-info-role{font-family:'Space Mono',monospace;font-size:.54rem;color:rgba(242,237,230,.38);letter-spacing:.05em;margin-top:.3rem;line-height:1.55}
+.rec-tag{display:inline-flex;align-items:center;gap:.4rem;font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:.09em;text-transform:uppercase;padding:.22rem .6rem;margin-top:.55rem;border-radius:2px}
+.rec-card.c1 .rec-tag{background:rgba(0,180,166,.09);color:rgba(0,180,166,.8);border:1px solid rgba(0,180,166,.2)}
+.rec-card.c2 .rec-tag{background:rgba(232,93,117,.09);color:rgba(232,93,117,.8);border:1px solid rgba(232,93,117,.2)}
+.rec-card.c3 .rec-tag{background:rgba(247,163,37,.08);color:rgba(247,163,37,.8);border:1px solid rgba(247,163,37,.2)}
+.rec-quote{font-family:'Cormorant Garamond',serif;font-size:1.06rem;font-weight:300;line-height:1.9;color:rgba(242,237,230,.7);position:relative;z-index:1}
+.rec-quote strong{color:#fff;font-weight:600}
+.rec-footer{display:flex;align-items:center;gap:.5rem;margin-top:1.8rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.05);font-family:'Space Mono',monospace;font-size:.5rem;color:rgba(242,237,230,.22);letter-spacing:.07em}
+.rec-footer svg{opacity:.4;flex-shrink:0}
+
+/* ─── CONTACT ─── */
+.contact-wrap{background:var(--paper);color:var(--text-dark);position:relative;overflow:hidden;min-height:80vh;display:flex;align-items:center;justify-content:center}
+.contact-bg-txt{position:absolute;font-family:'Cormorant Garamond',serif;font-size:24vw;font-weight:700;font-style:italic;color:rgba(8,7,15,.055);white-space:nowrap;pointer-events:none;bottom:-3rem;left:50%;transform:translateX(-50%);line-height:1}
+.contact-inner{text-align:center;position:relative;z-index:2;padding:6rem 2rem}
+.contact-inner .sec-num{color:var(--rose);justify-content:center}
+.contact-inner .sec-num::before{background:var(--rose)}
+.contact-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,6rem);font-weight:700;line-height:1;color:var(--text-dark);margin-bottom:1rem}
+.contact-inner h2 em{font-style:italic;color:var(--rose)}
+.contact-sub{font-size:1rem;color:var(--text-mid);line-height:1.8;max-width:500px;margin:0 auto 2.5rem}
+.c-email{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.8rem);font-weight:300;color:var(--text-dark);text-decoration:none;border-bottom:1px solid rgba(8,7,15,.15);padding-bottom:.5rem;transition:color .3s;margin-bottom:2rem}
+.c-email:hover{color:var(--rose)}
+.c-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.c-link{display:flex;align-items:center;gap:.6rem;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--text-mid);text-decoration:none;letter-spacing:.1em;padding:.85rem 1.5rem;border:1px solid rgba(8,7,15,.12);transition:all .3s}
+.c-link:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
+
+/* ─── FOOTER ─── */
+footer{background:var(--ink);padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-family:'Space Mono',monospace;font-size:.6rem;color:rgba(242,237,230,.22);letter-spacing:.1em}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.will-animate{opacity:0;transform:translateY(28px)}
+.reveal.in{opacity:1!important;transform:none!important}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .hero-content{grid-template-columns:1fr;padding:7rem 1.5rem 3rem}
+  .hero-right{display:none}
+  .hero-name{font-size:clamp(3.5rem,14vw,6rem)}
+  .section{padding:5rem 1.5rem}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .about-left{position:static}
+  .exp-inner{padding:5rem 1.5rem}
+  .exp-card{grid-template-columns:1fr}
+  .exp-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.05)}
+  .skill-tile{grid-column:span 12!important}
+  .projects-grid{grid-template-columns:1fr}
+  .charts-section{padding:0 1.5rem 5rem}
+  .charts-grid{grid-template-columns:1fr}
+  .rec-inner{padding:5rem 1.5rem}
+  .rec-grid{grid-template-columns:1fr}
+  footer{padding:1.5rem;flex-direction:column;gap:.5rem;text-align:center}
+}
+@media(max-width:600px){
+  .hero-name{font-size:clamp(3rem,13vw,5rem)}
+  .hero-desc{font-size:.92rem}
+  .btn-glow,.btn-ghost{font-size:.68rem;padding:.8rem 1.4rem}
+  .proj-card{padding:1.8rem}
+}
+</style>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<div class="cur" id="curDot" style="position:fixed;top:0;left:0"></div>
+<div class="cur" id="curRing" style="position:fixed;top:0;left:0"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-mark">
+    <img src="https://lh3.googleusercontent.com/d/16xCZOrS4s_--KKxD6gpZmqC1C2yVEWpE" alt="Vrinda Parashar" class="nav-logo-img">
+    <span class="nav-logo-name">VP</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#recommendations">Recommendations</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="Vrinda-Parashar_DA.pdf" download class="nav-resume">📄 Resume</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav-drawer" id="navDrawer">
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#recommendations">Recommendations</a>
+  <a href="#contact">Contact</a>
+  <a href="Vrinda-Parashar_DA.pdf" download style="color:var(--rose)">📄 Download Resume</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-eyebrow"><span class="eyebrow-line"></span><span class="avail-dot"></span>Open to Opportunities · Data & Web Analyst</div>
+      <h1 class="hero-name">Vrinda<span class="line2">Parashar</span></h1>
+      <div class="hero-band">Data & Web Analyst</div>
+      <p class="hero-desc">The intersection of <strong>creativity and data</strong> is where I exist. I turn numbers into narratives, decoding e-commerce patterns into growth strategy, and transforming raw signals into <strong>decisions that move the needle.</strong></p>
+      <div class="hero-ctas">
+        <a href="mailto:vrindaparashar2003@gmail.com" class="btn-glow">Let's Connect</a>
+        <a href="Vrinda-Parashar_DA.pdf" download class="btn-resume"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Resume</a>
+        <a href="https://linkedin.com/in/vrinda-parashar2024" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-inner">
+        <div class="intersection-box">
+          <div class="venn-wrap">
+            <svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="gradL" cx="38%" cy="50%" r="55%">
+                  <stop offset="0%" stop-color="#e85d75" stop-opacity="0.38"/>
+                  <stop offset="100%" stop-color="#e85d75" stop-opacity="0.04"/>
+                </radialGradient>
+                <radialGradient id="gradR" cx="62%" cy="50%" r="55%">
+                  <stop offset="0%" stop-color="#00b4a6" stop-opacity="0.32"/>
+                  <stop offset="100%" stop-color="#00b4a6" stop-opacity="0.04"/>
+                </radialGradient>
+                <radialGradient id="gradC" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+                  <stop offset="60%" stop-color="#c87dab" stop-opacity="0.08"/>
+                  <stop offset="100%" stop-color="#c87dab" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="dotGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+
+              <!-- Left circle -->
+              <circle class="venn-circle-left" cx="130" cy="75" r="72"
+                fill="url(#gradL)" stroke="#e85d75" stroke-width="1.3" stroke-opacity="0.55"/>
+
+              <!-- Dashed orbit ring — left -->
+              <circle cx="130" cy="75" r="72" fill="none"
+                stroke="rgba(232,93,117,.18)" stroke-width="1"
+                stroke-dasharray="6 10" class="venn-dash-ring"/>
+
+              <!-- Right circle -->
+              <circle class="venn-circle-right" cx="210" cy="75" r="72"
+                fill="url(#gradR)" stroke="#00b4a6" stroke-width="1.3" stroke-opacity="0.5"/>
+
+              <!-- Intersection glow -->
+              <ellipse class="venn-intersection" cx="170" cy="75" rx="33" ry="52"
+                fill="url(#gradC)"/>
+
+              <!-- Orbit dot on left circle -->
+              <g class="orbit-wrap-l">
+                <circle cx="130" cy="3" r="3.5" fill="#e85d75" filter="url(#dotGlow)" opacity="0.92"/>
+              </g>
+
+              <!-- Orbit dot on right circle -->
+              <g class="orbit-wrap-r">
+                <circle cx="210" cy="3" r="3" fill="#00b4a6" filter="url(#dotGlow)" opacity="0.88"/>
+              </g>
+
+              <!-- Labels -->
+              <text class="venn-label-l" x="97" y="62">Creative</text>
+              <text class="venn-label-l" x="97" y="76">Thinking</text>
+              <text class="venn-label-r" x="243" y="62">Data &amp;</text>
+              <text class="venn-label-r" x="243" y="76">Analytics</text>
+
+              <!-- Centre -->
+              <text class="venn-label-c" x="170" y="69">Strategy</text>
+              <text class="venn-sub-c" x="170" y="83">↯ THIS IS ME</text>
+            </svg>
+          </div>
+          <div class="intersection-labels">
+            <span>Storytelling</span><span>Insight · Growth</span><span>Numbers</span>
+          </div>
+        </div>
+        <div class="hero-stats-row">
+          <div class="hstat"><span class="hstat-val">2M+</span><span class="hstat-lbl">Sessions/mo · RedTape</span></div>
+          <div class="hstat"><span class="hstat-val">+40%</span><span class="hstat-lbl">Prepaid Orders ↑</span></div>
+          <div class="hstat"><span class="hstat-val">-15%</span><span class="hstat-lbl">Returns Reduced ↓</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-ticker">
+    <div class="ticker-track">
+      <div class="ticker-item">Google Analytics 4 <span>✦</span></div>
+      <div class="ticker-item">Power BI Dashboards <span>✦</span></div>
+      <div class="ticker-item">SQL Query Optimization <span>✦</span></div>
+      <div class="ticker-item">Conversion Funnel Analysis <span>✦</span></div>
+      <div class="ticker-item">Google Tag Manager <span>✦</span></div>
+      <div class="ticker-item">E-commerce Analytics <span>✦</span></div>
+      <div class="ticker-item">Sales Forecasting <span>✦</span></div>
+      <div class="ticker-item">SEO &amp; Search Console <span>✦</span></div>
+      <div class="ticker-item">Google Analytics 4 <span>✦</span></div>
+      <div class="ticker-item">Power BI Dashboards <span>✦</span></div>
+      <div class="ticker-item">SQL Query Optimization <span>✦</span></div>
+      <div class="ticker-item">Conversion Funnel Analysis <span>✦</span></div>
+      <div class="ticker-item">Google Tag Manager <span>✦</span></div>
+      <div class="ticker-item">E-commerce Analytics <span>✦</span></div>
+      <div class="ticker-item">Sales Forecasting <span>✦</span></div>
+      <div class="ticker-item">SEO &amp; Search Console <span>✦</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-divider">
+  <div class="marquee-track">
+    <span class="mw">Data</span><span class="mw a">Creativity</span><span class="mw">Growth</span><span class="mw a">Strategy</span><span class="mw">Insights</span><span class="mw a">Commerce</span><span class="mw">Data</span><span class="mw a">Creativity</span><span class="mw">Growth</span><span class="mw a">Strategy</span><span class="mw">Insights</span><span class="mw a">Commerce</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="sec-header reveal">
+    <div class="sec-num">01 · About</div>
+    <h2 class="sec-title">Driven by <em>data,</em><br>shaped by curiosity</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-left reveal">
+      <div class="about-portrait">
+        <img src="https://lh3.googleusercontent.com/d/16xCZOrS4s_--KKxD6gpZmqC1C2yVEWpE" alt="Vrinda Parashar">
+        <div class="portrait-tag"><div class="pt-title">Vrinda Parashar</div><div class="pt-sub">Data Analyst · Delhi</div></div>
+      </div>
+      <div class="edu-badge"><div class="edu-icon">🎓</div><div><div class="edu-deg">B.Sc. Computer Science (Hons)</div><div class="edu-school">Calcutta University · 2021–2024</div></div></div>
+    </div>
+    <div class="about-text">
+      <p class="reveal">I'm a <strong>Data &amp; Web Analyst</strong> with hands-on experience transforming complex datasets into revenue-driving decisions. My work spans GA4 implementation, conversion funnel optimisation, and large-scale Power BI dashboards across high-traffic e-commerce platforms.</p>
+      <p class="reveal d1">At <strong>RedTape Limited</strong>, I analyse sales and traffic across 5+ brand websites generating <strong>2M+ monthly sessions</strong> and 35K+ SKUs. Building dashboards that cut RTO by 15%, boosted prepaid orders by 40%, and improved inventory accuracy by 17%.</p>
+      <p class="reveal d2">My approach: I don't just report numbers, I find the story hidden in the data and translate it into clear action for marketing, operations, and product teams.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<div style="background:rgba(0,180,166,.04);border-top:1px solid rgba(0,180,166,.12);border-bottom:1px solid rgba(0,180,166,.12);padding:3rem 5rem;position:relative;z-index:1;overflow:hidden">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:700;color:rgba(0,180,166,.18);line-height:.8;flex-shrink:0">"</div>
+    <div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;font-weight:300;color:rgba(242,237,230,.82);line-height:1.8;margin-bottom:1rem">She brings a structured approach to analytics, combines it with creative problem-solving, and consistently shows initiative beyond her defined responsibilities. Vrinda has the capability and potential to take on <strong style="color:#fff;font-weight:600">larger strategic roles</strong> as she continues to grow.</p>
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <div style="width:32px;height:32px;border-radius:50%;background:rgba(0,180,166,.15);border:1.5px solid rgba(0,180,166,.3);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:.85rem;font-weight:700;color:#fff;flex-shrink:0">AV</div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;color:#fff">Arvind Verma</div>
+          <div style="font-family:'Space Mono',monospace;font-size:.52rem;color:rgba(0,180,166,.75);letter-spacing:.06em;margin-top:.15rem">Director · RedTape Limited · Managed Vrinda directly</div>
+        </div>
+        <svg style="margin-left:.5rem;opacity:.5;flex-shrink:0" width="14" height="14" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        <span style="font-family:'Space Mono',monospace;font-size:.48rem;color:rgba(242,237,230,.22);letter-spacing:.06em">Verified LinkedIn · March 2026</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="exp-section" id="experience">
+  <div class="exp-inner">
+    <div class="sec-header reveal">
+      <div class="sec-num">02 · Experience</div>
+      <h2 class="sec-title">Where I've <em>made</em><br>an impact</h2>
+    </div>
+    <div class="exp-cards">
+      <div class="exp-card reveal">
+        <div class="exp-left">
+          <div class="exp-company">RedTape Limited</div>
+          <div class="exp-period">Sep 2025 · Present</div>
+          <span class="badge cur">Current Role</span>
+          <div class="exp-metrics">
+            <div class="metric"><span class="metric-val">2M+</span><span class="metric-lbl">Sessions/mo</span></div>
+            <div class="metric"><span class="metric-val">35K+</span><span class="metric-lbl">SKUs</span></div>
+          </div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Data &amp; E-commerce Analyst · Website &amp; SEO Analytics</div>
+          <ul class="exp-list">
+            <li>Analysed sales and traffic across 5+ brand websites; identified revenue and conversion optimisation opportunities</li>
+            <li>Extracted 100K+ monthly transaction records using SQL; segmented by payment type, geography &amp; behaviour</li>
+            <li>Identified 36% checkout drop-off via funnel analysis; UI improvements increased conversion by 2.5%</li>
+            <li>Built a 2-year Power BI sales dashboard across 1M+ transactions for seasonal forecasting and inventory optimisation</li>
+            <li>Designed prepaid vs COD dashboards, +40% prepaid adoption, -15% RTO</li>
+            <li>Developed automated stock monitoring dashboard for fast-moving SKU replenishment</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-card reveal d1">
+        <div class="exp-left">
+          <div class="exp-company">RedTape Limited</div>
+          <div class="exp-period">Jul 2025 · Sep 2025</div>
+          <span class="badge promoted">Promoted</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Cataloguing Executive · Marketplace Operations</div>
+          <ul class="exp-list">
+            <li>Managed product catalog data across Flipkart, Myntra, and major marketplaces</li>
+            <li>Improved listing accuracy and ensured platform guideline compliance</li>
+            <li>Optimised product attributes to improve search ranking and discoverability</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-card reveal d2">
+        <div class="exp-left">
+          <div class="exp-company">The Chief Hustler</div>
+          <div class="exp-period">Apr 2024 · Dec 2024</div>
+          <span class="badge past">Remote</span>
+          <div class="exp-metrics"><div class="metric"><span class="metric-val">+60%</span><span class="metric-lbl">Organic Sales</span></div></div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">E-commerce Operations Associate · Growth &amp; Analytics</div>
+          <ul class="exp-list">
+            <li>Optimised Amazon and Etsy listings, increasing organic sales by 60%</li>
+            <li>Built structured Excel sales tracking reports for marketplace performance analysis</li>
+            <li>Managed WordPress websites ensuring responsive UI and smooth customer journey</li>
+            <li>Improved SEO through meta-tag optimisation and targeted keyword strategy</li>
+            <li>Performed web analytics QA across JS, HTML, and tag implementations to validate event tracking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="sec-header reveal">
+    <div class="sec-num">03 · Skills</div>
+    <h2 class="sec-title">My <em>toolkit</em> for<br>making things happen</h2>
+  </div>
+  <div class="skills-mosaic reveal">
+    <div class="skill-tile w5">
+      <span class="skill-tile-icon">📊</span>
+      <h4>Data Analysis &amp; Visualisation</h4>
+      <p>Building intelligence dashboards that distil millions of rows into clear, actionable business decisions.</p>
+      <div class="pills"><span class="pill">Power BI</span><span class="pill">Advanced Excel</span><span class="pill">Funnel Analysis</span><span class="pill">Sales Forecasting</span><span class="pill">Data Cleaning</span></div>
+      <div class="skill-big">BI</div>
+    </div>
+    <div class="skill-tile w4">
+      <span class="skill-tile-icon">🌐</span>
+      <h4>Web &amp; Product Analytics</h4>
+      <p>GA4 event tracking, GTM implementation, and Search Console insights to optimise every digital touchpoint.</p>
+      <div class="pills"><span class="pill">GA4</span><span class="pill">Google Tag Manager</span><span class="pill">Search Console</span></div>
+      <div class="skill-big">GA4</div>
+    </div>
+    <div class="skill-tile w3">
+      <span class="skill-tile-icon">💻</span>
+      <h4>Programming</h4>
+      <div class="pills"><span class="pill">SQL (MySQL)</span><span class="pill">Python</span><span class="pill">Java</span><span class="pill">PHP</span><span class="pill">JavaScript</span></div>
+      <div class="skill-big">&lt;/&gt;</div>
+    </div>
+    <div class="skill-tile w6">
+      <span class="skill-tile-icon">🛒</span>
+      <h4>E-commerce &amp; Marketplaces</h4>
+      <p>End-to-end marketplace management across India's biggest platforms from listing to fulfilment analytics.</p>
+      <div class="pills"><span class="pill">Shopify</span><span class="pill">Amazon Seller Central</span><span class="pill">Flipkart</span><span class="pill">Myntra</span><span class="pill">Etsy</span><span class="pill">WordPress</span></div>
+    </div>
+    <div class="skill-tile w6">
+      <span class="skill-tile-icon">🔍</span>
+      <h4>SEO &amp; Growth</h4>
+      <p>Keyword research, technical audits, and content optimisation strategies that compound over time.</p>
+      <div class="pills"><span class="pill">SEMrush</span><span class="pill">Keyword Research</span><span class="pill">Meta Optimisation</span><span class="pill">Technical SEO</span><span class="pill">SERP Analysis</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="sec-header reveal">
+    <div class="sec-num">04 · Projects</div>
+    <h2 class="sec-title">Work that <em>moved</em><br>the needle</h2>
+  </div>
+  <div class="projects-grid">
+    <a href="project-funnel.html" class="proj-card reveal">
+      <div class="proj-accent"></div><div class="proj-num">01</div>
+      <span class="proj-icon">🔬</span>
+      <h3>E-commerce Funnel &amp; Conversion Analysis</h3>
+      <p>Analysed 100K+ transaction records to study user purchase behaviour. Identified checkout-stage drop-off using funnel segmentation with advanced SQL queries.</p>
+      <div class="proj-stack"><span class="ptag">SQL</span><span class="ptag">Power BI</span><span class="ptag">Funnel Analysis</span><span class="ptag">Behavioural Segmentation</span></div>
+      <div class="proj-result">Outcome: <strong>+2.5% conversion rate</strong> after targeted UI improvements</div>
+      <div class="proj-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="project-sales.html" class="proj-card reveal d1">
+      <div class="proj-accent"></div><div class="proj-num">02</div>
+      <span class="proj-icon">📈</span>
+      <h3>Sales Forecasting &amp; Prepaid Optimisation</h3>
+      <p>Built a 2-year historical sales dashboard across 1M+ transactions for seasonal forecasting, inventory optimisation, and RTO reduction.</p>
+      <div class="proj-stack"><span class="ptag">Power BI</span><span class="ptag">Forecasting</span><span class="ptag">RTO Analysis</span><span class="ptag">Regional Segmentation</span></div>
+      <div class="proj-result">Outcome: <strong>+40% prepaid · -15% RTO · +17% inventory accuracy</strong></div>
+      <div class="proj-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="project-inventory.html" class="proj-card reveal d2">
+      <div class="proj-accent"></div><div class="proj-num">03</div>
+      <span class="proj-icon">📦</span>
+      <h3>Automated Inventory Monitoring Dashboard</h3>
+      <p>Designed a dashboard to identify fast-selling SKUs and reduce stock-out risk through data-backed reorder timing insights for proactive inventory management.</p>
+      <div class="proj-stack"><span class="ptag">Dashboard Design</span><span class="ptag">SKU Analysis</span><span class="ptag">Inventory Planning</span><span class="ptag">Automation</span></div>
+      <div class="proj-result">Outcome: <strong>Eliminated reactive restocking decisions</strong></div>
+      <div class="proj-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="project-bakery.html" class="proj-card reveal d3">
+      <div class="proj-accent"></div><div class="proj-num">04</div>
+      <span class="proj-icon">🍰</span>
+      <h3>Bakery Management System</h3>
+      <p>Developed a full-stack database-driven ordering platform with backend order management, user authentication, and a fully responsive customer-facing interface from scratch.</p>
+      <div class="proj-stack"><span class="ptag">PHP</span><span class="ptag">MySQL</span><span class="ptag">HTML/CSS</span><span class="ptag">JavaScript</span></div>
+      <div class="proj-result">Outcome: <strong>End-to-end full-stack delivery</strong></div>
+      <div class="proj-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="project-sales-improvement.html" class="proj-card reveal d1">
+      <div class="proj-accent"></div><div class="proj-num">05</div>
+      <span class="proj-icon">🚀</span>
+      <h3>Sales Growth &amp; Revenue Improvement</h3>
+      <p>Drove a <strong style="color:var(--amber)">105% year-on-year increase in total sales</strong>. Through a data-led approach combining marketplace optimisation, campaign analysis, and strategic pricing, revenue doubled in under 12 months.</p>
+      <div class="proj-stack"><span class="ptag">Sales Analytics</span><span class="ptag">Power BI</span><span class="ptag">SKU Optimisation</span><span class="ptag">Pricing Strategy</span></div>
+      <div class="proj-result">Outcome: <strong>+105% total sales growth YoY</strong> within first year</div>
+      <div class="proj-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a href="project-uiux.html" class="proj-card reveal d2">
+      <div class="proj-accent"></div><div class="proj-num">06</div>
+      <span class="proj-icon">🎨</span>
+      <h3>UI/UX Research &amp; Website Performance Overhaul</h3>
+      <p>End-to-end UX research and technical overhaul. Reduced product-discovery clicks from 7–8 down to 4, improved LCP via WebP, indexed pages on Google, added schema snippets, and listed on Google Merchant Centre.</p>
+      <div class="proj-stack"><span class="ptag">UX Research</span><span class="ptag">Technical SEO</span><span class="ptag">LCP / WebP</span><span class="ptag">Google Merchant Centre</span></div>
+      <div class="proj-result">Outcome: <strong>7–8 clicks → 4 · Improved LCP · Google Shopping live</strong></div>
+      <div class="proj-cta">View Project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+  </div>
+</section>
+
+<!-- CHARTS -->
+<div class="charts-section" id="charts">
+  <div class="sec-header reveal">
+    <div class="sec-num">05 · Impact at a Glance</div>
+    <h2 class="sec-title">Numbers that <em>speak</em><br>for themselves</h2>
+  </div>
+  <div class="charts-grid reveal">
+    <div class="chart-panel" id="funnelPanel">
+      <div class="chart-panel-label">Funnel Analysis · Project 01</div>
+      <div class="chart-panel-title">E-commerce Checkout Journey</div>
+      <div class="mini-funnel">
+        <div class="mf-row"><div class="mf-lbl">Sessions</div><div class="mf-track"><div class="mf-fill" style="background:linear-gradient(90deg,#e85d75,#c4435a)" data-w="100"><span class="mf-pct">100%</span></div></div></div>
+        <div class="mf-row"><div class="mf-lbl">Product View</div><div class="mf-track"><div class="mf-fill" style="background:linear-gradient(90deg,#d44f67,#b03)" data-w="78"><span class="mf-pct">78%</span></div></div></div>
+        <div class="mf-row"><div class="mf-lbl">Add to Cart</div><div class="mf-track"><div class="mf-fill" style="background:linear-gradient(90deg,#b84060,#7c5cbf)" data-w="54"><span class="mf-pct">54%</span></div></div></div>
+        <div class="mf-row"><div class="mf-lbl">Checkout</div><div class="mf-track"><div class="mf-fill" style="background:linear-gradient(90deg,#e85d75,#7c5cbf)" data-w="38"><span class="mf-pct">38% !</span></div></div></div>
+        <div class="mf-row"><div class="mf-lbl">Purchase</div><div class="mf-track"><div class="mf-fill" style="background:linear-gradient(90deg,#f7a325,#e85d75)" data-w="24"><span class="mf-pct">24%</span></div></div></div>
+      </div>
+      <div class="chart-result">Key insight: <strong>36% drop at checkout</strong> resolved via UI fixes</div>
+    </div>
+    <div class="chart-panel" id="baPanel">
+      <div class="chart-panel-label">Optimisation Impact · Project 02</div>
+      <div class="chart-panel-title">Prepaid &amp; RTO Before vs After</div>
+      <div class="ba-group">
+        <div class="ba-label">PREPAID ADOPTION</div>
+        <div class="ba-pair">
+          <div class="ba-row"><div class="ba-bar" style="background:rgba(232,93,117,.28);max-width:180px" data-w="45"></div><span class="ba-val">45%</span></div>
+          <div class="ba-caption">Before</div>
+          <div class="ba-row"><div class="ba-bar" style="background:rgba(232,93,117,.9);max-width:180px" data-w="85"></div><span class="ba-val" style="color:var(--rose)">85%</span></div>
+          <div class="ba-caption" style="color:var(--rose)">After · +40 pts</div>
+        </div>
+      </div>
+      <div class="ba-group" style="margin-top:1.2rem">
+        <div class="ba-label">RTO RATE</div>
+        <div class="ba-pair">
+          <div class="ba-row"><div class="ba-bar" style="background:rgba(247,163,37,.3);max-width:180px" data-w="70"></div><span class="ba-val">24%</span></div>
+          <div class="ba-caption">Before</div>
+          <div class="ba-row"><div class="ba-bar" style="background:rgba(0,180,166,.85);max-width:180px" data-w="50"></div><span class="ba-val" style="color:var(--teal)">-15%</span></div>
+          <div class="ba-caption" style="color:var(--teal)">After · -15%</div>
+        </div>
+      </div>
+      <div class="chart-result">Across <strong>1M+ transactions</strong> · 2-year dashboard</div>
+    </div>
+    <div class="chart-panel">
+      <div class="chart-panel-label">Category Mix · Project 04</div>
+      <div class="chart-panel-title">Bakery Order Breakdown</div>
+      <div class="donut-wrap">
+        <canvas id="donutCanvas" width="100" height="100" style="flex-shrink:0"></canvas>
+        <div class="donut-legend">
+          <div class="dl-item"><div class="dl-dot" style="background:#e85d75"></div>Cakes<span class="dl-val">38%</span></div>
+          <div class="dl-item"><div class="dl-dot" style="background:#7c5cbf"></div>Pastries<span class="dl-val">27%</span></div>
+          <div class="dl-item"><div class="dl-dot" style="background:#00b4a6"></div>Breads<span class="dl-val">21%</span></div>
+          <div class="dl-item"><div class="dl-dot" style="background:#f7a325"></div>Specials<span class="dl-val">14%</span></div>
+        </div>
+      </div>
+      <div class="chart-result">From full-stack <strong>Bakery Management System</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     RECOMMENDATIONS — Section 05
+═══════════════════════════════════════════ -->
+<div class="rec-section" id="recommendations">
+  <div class="rec-inner">
+    <div class="sec-header reveal">
+      <div class="sec-num">06 · Recommendations</div>
+      <h2 class="sec-title">What people <em>say</em><br>about working with me</h2>
+    </div>
+    <div class="rec-grid">
+
+      <!-- Card 1: Arvind Verma — Director -->
+      <div class="rec-card c1 reveal">
+        <div class="rec-person">
+          <div class="rec-init">AV</div>
+          <div>
+            <div class="rec-info-name">Arvind Verma</div>
+            <div class="rec-info-role">Director at REDTAPE LIMITED<br>Managed Vrinda directly</div>
+            <div class="rec-tag">🏢 Director · RedTape</div>
+          </div>
+        </div>
+        <p class="rec-quote">
+          Vrinda has demonstrated <strong>strong analytical judgment</strong> and a clear understanding of business impact through her work at RedTape. Her contributions to performance optimisation and data-led decision-making have supported <strong>measurable improvements across key operational areas.</strong>
+          <br><br>
+          She brings a structured approach to analytics, combines it with creative problem-solving, and consistently shows initiative beyond her defined responsibilities. Vrinda has the capability and potential to take on <strong>larger strategic roles</strong> as she continues to grow in her career.
+        </p>
+        <div class="rec-footer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Verified LinkedIn · March 2026
+        </div>
+      </div>
+
+      <!-- Card 2: Mona Hussain — Manager -->
+      <div class="rec-card c2 reveal d1">
+        <div class="rec-person">
+          <div class="rec-init">MH</div>
+          <div>
+            <div class="rec-info-name">Mona Hussain</div>
+            <div class="rec-info-role">Brand Manager · E-commerce Growth<br>at RedTape — managed Vrinda directly</div>
+            <div class="rec-tag">👩‍💼 Manager · RedTape</div>
+          </div>
+        </div>
+        <p class="rec-quote">
+          Vrinda is a <strong>dedicated and analytical professional</strong> who has supported our e-commerce growth through strong reporting, website performance monitoring, and data-driven insights. She is proactive, reliable, and has a solid understanding of tools like <strong>Excel and Google Analytics.</strong>
+          <br><br>
+          A great asset for analytics-focused roles. Beyond her technical strengths, she is a true team player, always willing to support others and contribute wherever needed. She brings a <strong>positive, energetic presence</strong> to the workplace and a collaborative environment among her coworkers.
+        </p>
+        <div class="rec-footer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Verified LinkedIn · January 2026
+        </div>
+      </div>
+
+      <!-- Card 3: Mehal — Intern managed -->
+      <div class="rec-card c3 reveal d2">
+        <div class="rec-person">
+          <div class="rec-init">M</div>
+          <div>
+            <div class="rec-info-name">Mehal</div>
+            <div class="rec-info-role">National Institute of Fashion Technology<br>Intern — Vrinda managed Mehal directly</div>
+            <div class="rec-tag">🎓 Intern managed · RedTape</div>
+          </div>
+        </div>
+        <p class="rec-quote">
+          I had the pleasure of learning from Vrinda Parashar, an <strong>exceptionally talented Website Designer and SEO Strategist.</strong> Her depth of knowledge in building effective, user-friendly websites combined with her strategic understanding of SEO truly sets her apart.
+          <br><br>
+          Vrinda has a unique ability to break down complex concepts into simple, practical insights, making it easy to understand not just the "how" but also the "why" behind every design and optimisation decision. Through her guidance, I gained a strong foundation in <strong>website structuring, user experience, and search visibility.</strong> What stands out most is her passion for sharing knowledge and her keen eye for detail.
+        </p>
+        <div class="rec-footer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Verified LinkedIn · March 2026
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-bg-txt">Hello.</div>
+  <div class="contact-inner">
+    <div class="sec-num reveal">07 · Contact</div>
+    <h2 class="reveal">Let's build <em>something</em><br>great together</h2>
+    <p class="contact-sub reveal">Open to data analytics, web analytics, and e-commerce growth roles. Always happy to chat about dashboards, data strategy, or anything in between.</p>
+    <a href="mailto:vrindaparashar2003@gmail.com" class="c-email reveal">vrindaparashar2003@gmail.com</a>
+    <div class="c-row reveal">
+      <a href="tel:+919875395143" class="c-link">📞 +91 98753 95143</a>
+      <a href="https://linkedin.com/in/vrinda-parashar2024" target="_blank" class="c-link">🔗 LinkedIn Profile</a>
+      <a href="Vrinda-Parashar_DA.pdf" download class="c-link">📄 Download Resume</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Vrinda Parashar · Built with care</p>
+  <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;justify-content:flex-end">
+    <a href="https://linkedin.com/in/vrinda-parashar2024" target="_blank" style="font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(242,237,230,.35);text-decoration:none;letter-spacing:.1em;transition:color .3s" onmouseover="this.style.color='#e85d75'" onmouseout="this.style.color='rgba(242,237,230,.35)'">LinkedIn ↗</a>
+    <a href="Vrinda-Parashar_DA.pdf" download style="font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(242,237,230,.35);text-decoration:none;letter-spacing:.1em;transition:color .3s" onmouseover="this.style.color='#f7a325'" onmouseout="this.style.color='rgba(242,237,230,.35)'">📄 Resume</a>
+    <a href="#" style="font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(242,237,230,.35);text-decoration:none;letter-spacing:.1em;transition:color .3s" onmouseover="this.style.color='#00b4a6'" onmouseout="this.style.color='rgba(242,237,230,.35)'" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* PARTICLES */
+const cvs=document.getElementById('bgCanvas'),ctx=cvs.getContext('2d');
+let W,H,pts=[];
+const COLS=['#e85d75','#00b4a6','#7c5cbf','#f7a325'];
+function resize(){W=cvs.width=window.innerWidth;H=cvs.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+class P{
+  constructor(){this.reset()}
+  reset(){this.x=Math.random()*W;this.y=Math.random()*H;this.vx=(Math.random()-.5)*.35;this.vy=(Math.random()-.5)*.35;this.r=Math.random()*1.6+.4;this.col=COLS[Math.floor(Math.random()*4)];this.a=Math.random()*.5+.15}
+  update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W||this.y<0||this.y>H)this.reset()}
+  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.col+Math.floor(this.a*255).toString(16).padStart(2,'0');ctx.fill()}
+}
+for(let i=0;i<110;i++)pts.push(new P());
+function frame(){
+  ctx.clearRect(0,0,W,H);
+  for(let i=0;i<pts.length;i++){
+    pts[i].update();pts[i].draw();
+    for(let j=i+1;j<pts.length;j++){
+      const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);
+      if(d<110){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(232,93,117,${.1*(1-d/110)})`;ctx.lineWidth=.5;ctx.stroke()}
+    }
+  }
+  requestAnimationFrame(frame);
+}
+frame();
+
+/* CURSOR */
+const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
+let mx=0,my=0,rx=0,ry=0;
+if(dot&&ring){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx-4+'px';dot.style.top=my-4+'px'});
+  (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx-20+'px';ring.style.top=ry-20+'px';requestAnimationFrame(loop)})();
+  document.querySelectorAll('a,button,.proj-card,.exp-card,.rec-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{dot.style.transform='translate(-50%,-50%) scale(3)';ring.style.width='60px';ring.style.height='60px';ring.style.borderColor='rgba(232,93,117,.75)'});
+    el.addEventListener('mouseleave',()=>{dot.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='40px';ring.style.height='40px';ring.style.borderColor='rgba(232,93,117,.45)'});
+  });
+}
+
+/* SCROLL REVEAL */
+document.querySelectorAll('.reveal').forEach(el=>el.classList.add('will-animate'));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal.will-animate').forEach(el=>obs.observe(el));
+
+/* CHART ANIMATIONS */
+const chartObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.mf-fill,.ba-bar').forEach(el=>{el.style.width=(el.dataset.w||0)+'%'});
+      chartObs.unobserve(e.target);
+    }
+  });
+},{threshold:.2});
+document.querySelectorAll('#funnelPanel,#baPanel').forEach(el=>chartObs.observe(el));
+
+/* DONUT */
+function drawDonut(){
+  const c=document.getElementById('donutCanvas');if(!c)return;
+  const ct=c.getContext('2d');
+  const cx=50,cy=50,r=42,inner=25;
+  [{pct:.38,color:'#e85d75'},{pct:.27,color:'#7c5cbf'},{pct:.21,color:'#00b4a6'},{pct:.14,color:'#f7a325'}].reduce((a,s)=>{
+    const end=a+s.pct*Math.PI*2;
+    ct.beginPath();ct.moveTo(cx,cy);ct.arc(cx,cy,r,a,end);ct.closePath();ct.fillStyle=s.color;ct.fill();return end;
+  },-Math.PI/2);
+  ct.beginPath();ct.arc(cx,cy,inner,0,Math.PI*2);ct.fillStyle='#08070f';ct.fill();
+}
+window.addEventListener('load',drawDonut);
+
+/* HAMBURGER */
+const toggle=document.getElementById('navToggle'),drawer=document.getElementById('navDrawer');
+if(toggle&&drawer){
+  toggle.addEventListener('click',()=>{toggle.classList.toggle('open');

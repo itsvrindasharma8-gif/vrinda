@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vrinda Parashar · Growth Marketing Manager</title>
-<link rel="icon" type="image/jpeg" href="https://lh3.googleusercontent.com/d/16xCZOrS4s_--KKxD6gpZmqC1C2yVEWpE">
-<link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/16xCZOrS4s_--KKxD6gpZmqC1C2yVEWpE">
+<link rel="icon" type="image/jpeg" href="https://lh3.googleusercontent.com/d/1wD--Lc4OtxL_mKpMi1VDNmTeZA1WJaQd">
+<link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1wD--Lc4OtxL_mKpMi1VDNmTeZA1WJaQd">
 <meta name="description" content="E-Commerce & Performance Marketing Specialist combining paid media, marketplace management, SEO and data analytics. ₹30 CPO on ₹3L budget · 4,500 marathon registrations in 7 days · 2M+ sessions/mo at RedTape.">
-<meta property="og:title" content="Vrinda Parashar · E-Commerce & Performance Marketing Specialist">
-<meta property="og:description" content="Performance Marketing · E-Commerce Growth · GA4 · Power BI · Google Ads · Meta Ads · ₹30 CPO achieved.">
-<meta property="og:image" content="https://lh3.googleusercontent.com/d/16xCZOrS4s_--KKxD6gpZmqC1C2yVEWpE">
+<meta property="og:title" content="Vrinda Parashar · Growth Marketing Manager">
+<meta property="og:description" content="Growth Marketing Manager · E-Commerce Growth · GA4 · Power BI · Google Ads · Meta Ads · ₹30 CPO achieved.">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/1wD--Lc4OtxL_mKpMi1VDNmTeZA1WJaQd">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vrinda Parashar · E-Commerce & Performance Marketing Specialist">
-<meta name="twitter:description" content="Performance Marketing · E-Commerce · Analytics. ₹30 CPO · 4,500 registrations in 7 days.">
+<meta name="twitter:title" content="Vrinda Parashar · Growth Marketing Manager">
+<meta name="twitter:description" content="Growth Marketing Manager · E-Commerce · Analytics. ₹30 CPO · 4,500 registrations in 7 days.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#08070f;--paper:#f2ede6;--rose:#e85d75;--teal:#00b4a6;--amber:#f7a325;--violet:#7c5cbf;--text-dark:#1a1828;--text-mid:#5a5572;--text-light:#9893a8}
@@ -136,6 +136,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 /* ─── ABOUT ─── */
 .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;margin-top:2rem}
 .about-left{position:sticky;top:8rem}
+/* ─── PHOTO HOVER ─── */
 .about-portrait{width:100%;aspect-ratio:3/4;max-width:290px;border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
 .about-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(.92) contrast(1.05)}
 .portrait-tag{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;background:rgba(8,7,15,.85);backdrop-filter:blur(8px);padding:1rem;border-left:2px solid var(--rose)}
@@ -305,6 +306,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 footer{background:var(--ink);padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.04)}
 footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,230,.22);letter-spacing:.1em}
 
+/* ─── HERO FLOATING PHOTO ─── */
+.hero-photo-float{position:absolute;right:0;bottom:0;width:clamp(180px,22vw,320px);opacity:.13;pointer-events:none;z-index:1;mix-blend-mode:luminosity}
+.hero-photo-float img{width:100%;display:block;object-fit:cover}
+
 /* ─── REVEAL ─── */
 .reveal{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
 .reveal.will-animate{opacity:0;transform:translateY(28px)}
@@ -321,6 +326,7 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
   .hero-right{display:block}
   .hero-stats-row{display:none}
   .hero-name{font-size:clamp(3.5rem,14vw,6rem)}
+  .hero-photo-float{display:none}
   .section{padding:5rem 1.5rem}
   .about-grid{grid-template-columns:1fr;gap:3rem}
   .about-left{position:static}
@@ -334,6 +340,7 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
   .rec-inner{padding:5rem 1.5rem}
   .rec-grid{grid-template-columns:1fr}
   footer{padding:1.5rem;flex-direction:column;gap:.5rem;text-align:center}
+  .what-i-bring-grid{grid-template-columns:1fr!important;gap:3rem!important;padding:4rem 1.5rem!important}
 }
 @media(max-width:600px){
   .hero-name{font-size:clamp(3rem,13vw,5rem)}
@@ -354,7 +361,7 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-mark">
-    <img src="https://lh3.googleusercontent.com/d/16xCZOrS4s_--KKxD6gpZmqC1C2yVEWpE" alt="Vrinda Parashar" class="nav-logo-img">
+    <img src="https://lh3.googleusercontent.com/d/1wD--Lc4OtxL_mKpMi1VDNmTeZA1WJaQd" alt="Vrinda Parashar" class="nav-logo-img">
 
   </a>
   <ul class="nav-links">
@@ -364,7 +371,7 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
     <li><a href="#projects">Projects</a></li>
     <li><a href="#recommendations">Recommendations</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="https://drive.google.com/file/d/1gy5zGRpXxU_Rlrj4Lm76QwhwSXFRDcNW/view?usp=sharing" target="_blank" class="nav-resume">📄 Resume</a></li>
+    <li><a href="https://drive.google.com/file/d/18ppi-0pvkezNcojK9I2HWN_3FoaN1zXz/view?usp=sharing" target="_blank" class="nav-resume">📄 Resume</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -376,21 +383,22 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
   <a href="#projects">Projects</a>
   <a href="#recommendations">Recommendations</a>
   <a href="#contact">Contact</a>
-  <a href="https://drive.google.com/file/d/1gy5zGRpXxU_Rlrj4Lm76QwhwSXFRDcNW/view?usp=sharing" target="_blank" style="color:var(--rose)">📄 Download Resume</a>
+  <a href="https://drive.google.com/file/d/18ppi-0pvkezNcojK9I2HWN_3FoaN1zXz/view?usp=sharing" target="_blank" style="color:var(--rose)">📄 Download Resume</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+
   <div class="hero-content">
     <div>
       <div class="hero-eyebrow"><span class="eyebrow-line"></span><span class="avail-dot"></span>Available for New Roles &nbsp;·&nbsp; Delhi / Remote</div>
       <h1 class="hero-name">Vrinda<span class="line2">Parashar</span></h1>
-      <div class="hero-band">E-Commerce · Performance Marketing · Data Analytics</div>
+      <div class="hero-band">Growth Marketing Manager</div>
       <p class="hero-desc">Most marketers can run ads. Most analysts can build dashboards. <strong>I do both</strong> and I hold myself accountable to the revenue number in between. At RedTape: ₹30 cost-per-order, 4,500 leads in 7 days, 40% prepaid lift, 15% RTO drop. That's what happens when paid media and data analytics work as one.</p>
       <div class="hero-ctas">
         <a href="mailto:vrindaparashar2003@gmail.com" class="btn-glow">Let's Connect</a>
-        <a href="https://drive.google.com/file/d/1gy5zGRpXxU_Rlrj4Lm76QwhwSXFRDcNW/view?usp=sharing" target="_blank" class="btn-resume"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>My Resume</a>
+        <a href="https://drive.google.com/file/d/18ppi-0pvkezNcojK9I2HWN_3FoaN1zXz/view?usp=sharing" target="_blank" class="btn-resume"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>My Resume</a>
         <a href="https://linkedin.com/in/vrinda-parashar2024" target="_blank" class="btn-ghost">LinkedIn ↗</a>
       </div>
     </div>
@@ -508,15 +516,15 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
   <div class="about-grid">
     <div class="about-left reveal">
       <div class="about-portrait">
-        <img src="https://lh3.googleusercontent.com/d/16xCZOrS4s_--KKxD6gpZmqC1C2yVEWpE" alt="Vrinda Parashar">
-        <div class="portrait-tag"><div class="pt-title">Vrinda Parashar</div><div class="pt-sub">Performance Marketing · India</div></div>
+        <img src="https://lh3.googleusercontent.com/d/1wD--Lc4OtxL_mKpMi1VDNmTeZA1WJaQd" alt="Vrinda Parashar">
+        <div class="portrait-tag"><div class="pt-title">Vrinda Parashar</div><div class="pt-sub">Growth Marketing Manager · India</div></div>
       </div>
       <div class="edu-badge"><div class="edu-icon">🎓</div><div><div class="edu-deg">B.Sc. Computer Science (Hons)</div><div class="edu-school">Calcutta University · 2021–2024</div></div></div>
     </div>
     <div class="about-text">
-      <p class="reveal">I sit at the rare intersection of <strong>data analytics, performance marketing, and e-commerce operations</strong> uncommon in a single profile. My Computer Science foundation means I can go deep on SQL queries, attribution models, and GTM debugging that most marketing candidates simply don't have.</p>
-      <p class="reveal d1">At RedTape Limited, I owned full-funnel performance across 5+ brand websites with 2M+ monthly sessions and 35K+ SKUs with full accountability for ROAS, CAC, and marketing efficiency. ₹30 cost-per-order on a ₹3L campaign. 4,500 marathon registrations in 7 days on ₹30K spend. 40% improvement in prepaid adoption.</p>
-      <p class="reveal d2">What sets me apart? I've done the operational work cataloguing, SEO, marketplace management so I understand the business context behind every dataset and every campaign. I don't analyse or execute in a vacuum. I ask "so what?" before anyone else has to, and then I go build the thing that fixes it.</p>
+      <p class="reveal">I sit at the rare intersection of <strong>performance marketing, data analytics, and e-commerce growth</strong>  a combination that's genuinely uncommon in a single profile. My Computer Science foundation means I can go deep on SQL queries, attribution models, and GTM debugging that most marketing candidates simply don't have.</p>
+      <p class="reveal d1">At RedTape Limited, I owned full-funnel performance across 5+ brand websites with 2M+ monthly sessions and 35K+ SKUs  full accountability for ROAS, CAC, and marketing efficiency. ₹30 cost-per-order on a ₹3.45L campaign. 4,500 marathon registrations in 7 days at ₹7 CPR. 40% improvement in prepaid adoption. I built the 360° marketing playbook and lived in the data that measured it.</p>
+      <p class="reveal d2">What sets me apart? I've done the operational work  cataloguing, SEO, marketplace management  so I understand the business context behind every dataset and every campaign. I don't analyse or execute in a vacuum. I ask "so what?" before anyone else has to, and then I go build the thing that fixes it.</p>
     </div>
   </div>
 </section>
@@ -532,22 +540,22 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
         <div class="exp-left">
           <div class="exp-company">RedTape Limited</div>
           <div class="exp-period">Sep 2025 · Apr 2026</div>
-          <span class="badge past">Performance Marketing</span>
+          <span class="badge past">360° Marketing</span>
           <div class="exp-metrics">
             <div class="metric"><span class="metric-val">₹30</span><span class="metric-lbl">Cost/Order</span></div>
             <div class="metric"><span class="metric-val">2M+</span><span class="metric-lbl">Sessions/mo</span></div>
           </div>
         </div>
         <div class="exp-right">
-          <div class="exp-role">E-Commerce, Website &amp; Performance Marketing Analyst</div>
+          <div class="exp-role">E-Commerce &amp; Marketing Strategist</div>
           <ul class="exp-list">
-            <li>Owned full-funnel performance monitoring across 5+ brand websites 2M+ monthly sessions, 35K+ SKUs tracking traffic, paid campaign ROI, conversion rates, and revenue opportunities across all channels</li>
-            <li>Planned and executed Meta Ads lead-generation campaign for RedTape Marathon: 4,500 registrations in 7 days on ₹30,000 spend through precision audience targeting, creative A/B testing, and funnel optimisation cost per registration under ₹7</li>
-            <li>Ran 1-month integrated performance campaign (Google Ads + Meta Ads, ₹3L budget + ₹45K WhatsApp support) achieved ₹30 cost per order through continuous bid, audience, creative, and budget optimisation</li>
-            <li>Owned GA4, GTM, SQL, and Power BI reporting across paid campaigns, checkout funnels, prepaid/COD mix, product performance, regional demand, and RTO trends analysed 1,00,000+ monthly transactions</li>
-            <li>Identified 36% checkout-stage drop-off via funnel analysis; collaborated with UX and payments team contributed to 2.5% increase in overall website conversion rate</li>
-            <li>Led prepaid adoption optimisation via CCAvenue and Shiprocket increased prepaid share by 40% and reduced RTO by 15%, directly improving fulfilment margins</li>
-            <li>Built comprehensive 2-year Power BI sales and inventory dashboard across 1M+ transactions improved demand forecasting accuracy by 17%</li>
+            <li>Managed and scaled RedTape's Shopify storefronts, overseeing product catalogues, checkout flows, app integrations, and store optimisation aligned with paid and organic growth strategies</li>
+            <li>Owned full-funnel growth analytics across 5+ brand websites (2M+ monthly sessions, 35K+ SKUs), tracking campaign performance, conversion rates, revenue, and customer journey metrics</li>
+            <li>Executed 360° marketing campaigns spanning paid search, paid social, and WhatsApp  RedTape Marathon generated 4,500 registrations in 7 days at ₹7 CPR; integrated campaign delivered ₹30 cost per order on ₹3.45L budget</li>
+            <li>Built GA4, GTM, SQL, and Power BI dashboards analysing 1,00,000+ monthly transactions to optimise paid campaigns, checkout funnels, payment mix, product performance, and RTO trends</li>
+            <li>Improved website conversion rate by 2.5% by identifying 36% checkout-stage drop-offs through funnel analysis, driving CRO initiatives with UX and payments teams</li>
+            <li>Increased prepaid adoption by 40% and reduced RTO by 15% through payment optimisation strategies across CCAvenue and Shiprocket, improving fulfilment profitability</li>
+            <li>Built a Power BI sales and inventory dashboard covering 1M+ transactions, improving demand forecasting accuracy by 17%</li>
           </ul>
         </div>
       </div>
@@ -560,27 +568,59 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
         <div class="exp-right">
           <div class="exp-role">Catalog &amp; Marketplace Operations Executive</div>
           <ul class="exp-list">
-            <li>Managed end-to-end product catalog across Flipkart, Myntra, and other marketplaces titles, attributes, keywords, A+ content, image quality assurance, and platform compliance</li>
-            <li>Improved product discoverability, search rankings, and CTR through structured catalog optimisation and marketplace keyword strategy aligned with consumer search behaviour</li>
+            <li>Managed end-to-end product catalog across Flipkart, Myntra, and other marketplaces  titles, attributes, keywords, A+ content, image quality assurance, and platform compliance</li>
+            <li>Improved product discoverability, search rankings, and CTR through structured catalog optimisation; applied AEO of product listings to improve AI-powered search visibility and reach by 42%</li>
             <li>Coordinated listing hygiene, SKU updates, pricing accuracy, and marketplace readiness with cross-functional teams to support sales and operational targets</li>
           </ul>
         </div>
       </div>
       <div class="exp-card reveal d2">
         <div class="exp-left">
+          <div class="exp-company">Optiwise.ai</div>
+          <div class="exp-period">Mar 2025 · Aug 2025</div>
+          <span class="badge past">Contract · Full-time</span>
+          <div class="exp-metrics"><div class="metric"><span class="metric-val">+38%</span><span class="metric-lbl">Sales (Optimised ASINs)</span></div></div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">E-Commerce Growth Strategist</div>
+          <ul class="exp-list">
+            <li>Managed end-to-end Amazon and Walmart product listings for US clients  listing creation, content strategy, keyword integration, and ongoing optimisation across multiple accounts</li>
+            <li>Used Helium10 Cerebro and Magnet for deep keyword research and competitor reverse-ASIN analysis to identify high-volume ranking opportunities</li>
+            <li>Crafted SEO-optimised titles, bullet points, and product descriptions embedding primary and long-tail keywords to improve search visibility, CTR, and conversion</li>
+            <li>Conducted ongoing competitive research and listing refresh cycles that contributed to a 38% increase in sales across optimised accounts</li>
+            <li>Built weekly and monthly sales performance reports to track revenue trends, identify underperforming ASINs, and recommend data-driven pricing adjustments</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-card reveal d3">
+        <div class="exp-left">
           <div class="exp-company">The Chief Hustler</div>
-          <div class="exp-period">Apr 2024 · Dec 2024</div>
-          <span class="badge past">Remote</span>
+          <div class="exp-period">Oct 2024 · Dec 2024</div>
+          <span class="badge past">Full-Time · Remote</span>
           <div class="exp-metrics"><div class="metric"><span class="metric-val">+60%</span><span class="metric-lbl">Organic Sales</span></div></div>
         </div>
         <div class="exp-right">
-          <div class="exp-role">E-commerce Operations Associate · Growth &amp; Analytics</div>
+          <div class="exp-role">E-Commerce Operations Associate</div>
           <ul class="exp-list">
-            <li>Optimised Amazon and Etsy listings, increasing organic sales by 60%</li>
-            <li>Built structured Excel sales tracking reports for marketplace performance analysis</li>
-            <li>Managed WordPress websites ensuring responsive UI and smooth customer journey</li>
-            <li>Improved SEO through meta-tag optimisation and targeted keyword strategy</li>
-            <li>Performed web analytics QA across JS, HTML, and tag implementations to validate event tracking</li>
+            <li>Continued to own Amazon and Etsy listing strategy, driving further organic sales improvement through iterative keyword refresh and conversion-focused content updates</li>
+            <li>Managed WordPress websites including product pages, SEO metadata, responsive UI improvements, and user journey optimisation</li>
+            <li>Built and maintained Excel-based sales tracking reports for marketplace performance monitoring, product trend analysis, and operational visibility</li>
+            <li>Performed web analytics QA across JavaScript, HTML, and tag implementations to validate event tracking and ensure data accuracy</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-card reveal d3">
+        <div class="exp-left">
+          <div class="exp-company">The Chief Hustler</div>
+          <div class="exp-period">Apr 2024 · Sep 2024</div>
+          <span class="badge past">Internship · Remote</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">E-Commerce Operations Intern</div>
+          <ul class="exp-list">
+            <li>Optimised Amazon and Etsy product listings, driving 60% growth in organic traffic through keyword targeting, SEO-driven content, and conversion-focused product page improvements</li>
+            <li>Supported product page copywriting, category research, and basic marketplace SEO for US and India clients</li>
+            <li>Assisted in building Excel-based sales tracking dashboards and contributed to competitor analysis and keyword research tasks</li>
           </ul>
         </div>
       </div>
@@ -629,6 +669,27 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
     </div>
   </div>
 </section>
+
+<!-- WHAT I BRING -->
+<div style="background:rgba(232,93,117,.04);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)">
+  <div style="max-width:1200px;margin:0 auto;padding:6rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+    <div class="reveal">
+      <div class="sec-num" style="margin-bottom:1rem">What I Bring to Your Team</div>
+      <h2 class="sec-title" style="margin-bottom:2rem">A rare mix of <em>strategy,<br>execution</em> and tech</h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:300;line-height:1.95;color:rgba(242,237,230,.72)">My Computer Science foundation lets me go beyond surface-level reporting  I can work deeply with SQL queries, GA4/GTM tracking, attribution logic, funnel analysis, and dashboarding while staying laser-focused on business outcomes: revenue growth, ROAS, CPO, conversion rate improvement, prepaid adoption, and RTO reduction.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:300;line-height:1.95;color:rgba(242,237,230,.72);margin-top:1.5rem">I move fast, take full ownership, and use data to turn campaigns, websites, and marketplaces into <strong style="color:#fff">scalable, measurable growth engines.</strong></p>
+    </div>
+    <div class="reveal d1" style="display:flex;flex-direction:column;align-items:center;gap:1.5rem">
+      <div style="position:relative;width:100%;max-width:300px">
+        <img src="https://lh3.googleusercontent.com/d/1sSd2q-IPkI9wPFj0jbfQLngC_SIhn_E_" alt="Vrinda Parashar" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border:1px solid rgba(255,255,255,.08);display:block">
+        <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;background:rgba(8,7,15,.88);backdrop-filter:blur(8px);padding:1rem;border-left:2px solid var(--rose)">
+          <div style="font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;color:#fff">Growth Marketing Manager</div>
+          <div style="font-family:'Space Mono',monospace;font-size:.76rem;color:var(--rose);margin-top:.25rem">2+ years · D2C & Retail Brands</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- PROJECTS -->
 <section class="section" id="projects">
@@ -818,17 +879,18 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
 </div>
 
 <!-- CONTACT -->
+
 <div class="contact-wrap" id="contact">
   <div class="contact-bg-txt">Hello.</div>
   <div class="contact-inner">
     <div class="sec-num reveal">07 · Contact</div>
     <h2 class="reveal">Ready to drive<br><em>real results?</em></h2>
-     <p class="contact-sub reveal">I'm looking for a role where performance marketing meets analytics where I can own campaigns end-to-end, keep finding the narratives hiding in data, and turn them into revenue-moving decisions. If that's your team, let's talk.</p>
+     <p class="contact-sub reveal">I'm looking for a role where growth strategy meets analytics  where I can own campaigns end-to-end, build the infrastructure behind the numbers, and turn data into revenue-moving decisions. If that's your team, let's talk.</p>
     <a href="mailto:vrindaparashar2003@gmail.com" class="c-email reveal">vrindaparashar2003@gmail.com</a>
     <div class="c-row reveal">
       <a href="tel:+919875395143" class="c-link">📞 +91 98753 95143</a>
       <a href="https://linkedin.com/in/vrinda-parashar2024" target="_blank" class="c-link">🔗 LinkedIn Profile</a>
-      <a href="https://drive.google.com/file/d/1gy5zGRpXxU_Rlrj4Lm76QwhwSXFRDcNW/view?usp=sharing" target="_blank" class="c-link">📄 Download My Resume</a>
+      <a href="https://drive.google.com/file/d/18ppi-0pvkezNcojK9I2HWN_3FoaN1zXz/view?usp=sharing" target="_blank" class="c-link">📄 Download My Resume</a>
     </div>
   </div>
 </div>
@@ -837,7 +899,7 @@ footer p{font-family:'Space Mono',monospace;font-size:.76rem;color:rgba(242,237,
   <p>© 2026 Vrinda Parashar </p>
   <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;justify-content:flex-end">
     <a href="https://linkedin.com/in/vrinda-parashar2024" target="_blank" style="font-family:'Space Mono',monospace;font-size:.72rem;color:rgba(242,237,230,.35);text-decoration:none;letter-spacing:.1em;transition:color .3s" onmouseover="this.style.color='#e85d75'" onmouseout="this.style.color='rgba(242,237,230,.35)'">LinkedIn ↗</a>
-    <a href="https://drive.google.com/file/d/1gy5zGRpXxU_Rlrj4Lm76QwhwSXFRDcNW/view?usp=sharing" target="_blank" style="font-family:'Space Mono',monospace;font-size:.72rem;color:rgba(242,237,230,.35);text-decoration:none;letter-spacing:.1em;transition:color .3s" onmouseover="this.style.color='#f7a325'" onmouseout="this.style.color='rgba(242,237,230,.35)'">📄 Resume</a>
+    <a href="https://drive.google.com/file/d/18ppi-0pvkezNcojK9I2HWN_3FoaN1zXz/view?usp=sharing" target="_blank" style="font-family:'Space Mono',monospace;font-size:.72rem;color:rgba(242,237,230,.35);text-decoration:none;letter-spacing:.1em;transition:color .3s" onmouseover="this.style.color='#f7a325'" onmouseout="this.style.color='rgba(242,237,230,.35)'">📄 Resume</a>
     <a href="#" style="font-family:'Space Mono',monospace;font-size:.72rem;color:rgba(242,237,230,.35);text-decoration:none;letter-spacing:.1em;transition:color .3s" onmouseover="this.style.color='#00b4a6'" onmouseout="this.style.color='rgba(242,237,230,.35)'" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a>
   </div>
 </footer>
